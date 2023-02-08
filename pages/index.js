@@ -1,11 +1,21 @@
+import Link from "next/link";
+import styles from "../styles/home.module.css";
 import useStoree from "../utils/store";
+
 export default function Index() {
   const bears = useStoree((state) => state.bears);
 
   return (
     <>
-      <h1>home </h1>
+    <main  className={styles.container}>
+      
+      <Link href="/blog">
+        <h1>Blog App</h1>
+      </Link>
+      <h1>Home </h1>
       <p> bear no is {bears}</p>
+      
+    </main>
       <p>
         Laboris consectetur proident et non reprehenderit cupidatat
         reprehenderit culpa dolore dolor culpa. Cillum proident sint enim Lorem

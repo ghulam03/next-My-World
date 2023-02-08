@@ -1,6 +1,6 @@
 import prisma from "../../prisma/prisma"
 
-export default  handler = (req, res)=> {
+export default  handle = (req, res)=> {
      const {aname, aage, acolor, acountry}=req.body;
      const result=prisma.animal.create(
         {
