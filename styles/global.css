@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    --color-background:rgb(240, 240, 223);
+    font-family: 'Roboto', sans-serif;
+    color: #791010;
+    margin: 0;
+    background-color: var(--color-background);
+
+}
+h1,
+h2,
+h3 {
+  font-family: 'Oswald', 'Roboto', sans-serif;
+}
