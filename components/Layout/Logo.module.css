@@ -1,0 +1,8 @@
+.logo{
+    display: flex;
+    background-color: rgb(220, 220, 231);
+    
+}
+.logo>h3{
+    margin: 5px 5px 5px 5px;
+}

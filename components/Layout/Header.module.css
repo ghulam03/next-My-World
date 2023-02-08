@@ -1,8 +1,9 @@
 .header {
+    background-color: rgb(222, 232, 229);
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
 }
-.header > h2 {
+.header  h2 {
     margin: 5px 5px 5px 5px;
 }
