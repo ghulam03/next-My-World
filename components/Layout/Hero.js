@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "./Hero.module.css";
 function Hero() {
+  
   return (
     <>
       <main className={styles.container}>

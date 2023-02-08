@@ -1,9 +1,10 @@
 import AnimalForm from "../components/animal/AnimalForm";
+import AnimalList from "../components/animal/AnimalList";
 export default function Animal() {
   return (
     <>
     <AnimalForm/>
-    <h1>Animal List</h1>
+    <AnimalList/>
     
       <p2>
         Sit pariatur aliquip nostrud aute do sunt. Commodo proident dolor fugiat

@@ -17,6 +17,9 @@ function Header() {
         <Link href="/bird">
           <h2>Bird</h2>
         </Link>
+        <Link href="/counter-app">
+          <h2>CounterApp</h2>
+        </Link>
 
       </nav>
     </>

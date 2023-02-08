@@ -1,7 +1,11 @@
+import useStoree from "../utils/store";
 export default function Index() {
+  const bears = useStoree((state) => state.bears);
+
   return (
     <>
-    <h1>home </h1>
+      <h1>home </h1>
+      <p> bear no is {bears}</p>
       <p>
         Laboris consectetur proident et non reprehenderit cupidatat
         reprehenderit culpa dolore dolor culpa. Cillum proident sint enim Lorem
@@ -12,12 +16,6 @@ export default function Index() {
         qui quis laboris adipisicing cupidatat cupidatat aliquip ea consequat.
         Elit consequat cupidatat do nostrud laboris magna eu dolor nostrud
         tempor.
-      </p>
-      <p>
-        Exercitation officia ullamco in ut exercitation aliqua. Pariatur laborum
-        cillum ipsum ut elit fugiat nulla excepteur do enim. Ullamco consequat
-        incididunt nisi et quis dolor labore labore mollit eiusmod incididunt
-        dolore. Dolore officia voluptate culpa aliqua.
       </p>
     </>
   );
