@@ -13,7 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.10.0",
     "next": "^13.1.6",
+    "prisma": "^4.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
