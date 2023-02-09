@@ -6,14 +6,14 @@ export default function Animal() {
     <AnimalForm/>
     <AnimalList/>
     
-      <p2>
+      <p>
         Sit pariatur aliquip nostrud aute do sunt. Commodo proident dolor fugiat
         officia occaecat fugiat. Adipisicing nulla aute irure aliqua commodo
         tempor fugiat reprehenderit officia esse amet cupidatat consequat qui.
         Esse velit qui irure excepteur mollit consectetur ullamco ea
         exercitation eiusmod incididunt mollit aliquip consequat. Qui ea enim
         fugiat eu.
-      </p2>
+      </p>
      
     </>
   );

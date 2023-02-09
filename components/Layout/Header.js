@@ -20,6 +20,9 @@ function Header() {
         <Link href="/counter-app">
           <h2>CounterApp</h2>
         </Link>
+        <Link href="/users">
+          <h2>User List</h2>
+        </Link>
 
       </nav>
     </>
