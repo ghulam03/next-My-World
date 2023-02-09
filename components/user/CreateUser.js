@@ -8,7 +8,7 @@ function CreateUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const dataa = fetch("api/users",{
+    const dataa = fetch("/api/users",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"

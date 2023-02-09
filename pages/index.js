@@ -13,9 +13,11 @@ export default function Index() {
         <h1>Blog App</h1>
       </Link>
       <h1>Home </h1>
-      <p> bear no is {bears}</p>
+      
       
     </main>
+    <h3>the content of counter app</h3>
+      <h3> bear no is {bears}</h3>
       <p>
         Laboris consectetur proident et non reprehenderit cupidatat
         reprehenderit culpa dolore dolor culpa. Cillum proident sint enim Lorem

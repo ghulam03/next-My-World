@@ -10,7 +10,9 @@ function AnimalForm() {
   const [acountry, setacountry] = useState("india");
   const data={aname, aage, acolor, acountry};
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(aage, acolor, acountry);
 
     fetch('/api/postAnimal', {
   method: 'POST', // or 'PUT'
