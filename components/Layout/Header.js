@@ -23,6 +23,9 @@ function Header() {
         <Link href="/users">
           <h2>User List</h2>
         </Link>
+        <Link href="/api-check">
+          <h2>check your api here</h2>
+        </Link>
 
       </nav>
     </>
