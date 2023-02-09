@@ -4,10 +4,11 @@ import styles from "./Header.module.css";
 function Header() {
   return (
     <>
-      <nav className={styles.header}>
-      <Link href="/">
+    <Link href="/">
           <h2>Home</h2>
         </Link>
+      <nav className={styles.header}>
+      
         <Link href="/animal">
           <h2>Animal</h2>
         </Link>

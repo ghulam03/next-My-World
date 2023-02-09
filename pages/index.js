@@ -9,10 +9,10 @@ export default function Index() {
     <>
     <main  className={styles.container}>
       
+      <h1>This is Home  page</h1>
       <Link href="/blog">
         <h1>Blog App</h1>
       </Link>
-      <h1>Home </h1>
       
       
     </main>
