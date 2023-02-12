@@ -26,20 +26,3 @@ export default async function handle(req, res) {
 }
 
 
-// import prisma from "../../../prisma/prisma";
-// export default function handler(req, res) {
-//   if (req.method === "POST") {
-//     const { name, email, password, age, country } = req.body;
-//     console.log(name, email, password);
-//     prisma.users.create({
-//       data: {
-//         name,
-//         email,
-//         password,
-//         age,
-//         country,
-//       },
-//     });
-//     res.status(200);
-//   }
-// }

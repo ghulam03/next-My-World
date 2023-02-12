@@ -1,45 +1,27 @@
-import AnimalForm from "../../components/animal/AnimalForm";
-import AnimalList from "../../components/animal/AnimalList";
-export default function Animal(props) {
-  console.log(props);
-  // const animals = [
-  //   {
-  //     id:6456,
-  //     name: "ghgj",
-  //     age: 0,
-  //     color: "gh",
-  //   },
-  //   { id: 43234,name: "ghggjgjhgj", age: 0, color: "gh" },
-  // ];
-  return (
-    <>
-      <AnimalForm />
-      <AnimalList name={props} />
+import AnimalCard from "../../components/animal/AnimalCard";
+import prisma from "../../prisma/prisma";
 
-      <p>
-        Sit pariatur aliquip nostrud aute do sunt. Commodo proident dolor fugiat
-        officia occaecat fugiat. Adipisicing nulla aute irure aliqua commodo
-        tempor fugiat reprehenderit officia esse amet cupidatat consequat qui.
-        Esse velit qui irure excepteur mollit consectetur ullamco ea
-        exercitation eiusmod incididunt mollit aliquip consequat. Qui ea enim
-        fugiat eu.
-      </p>
-    </>
-  );
+export default function Index(props) {
+    console.log(props)
+    return (
+        <>
+        {props.animals.map((animal)=>{
+            return (
+                <>
+                 <AnimalCard name={animal.name}  color={animal.color} age={animal.age} desc={animal.desc} country={animal.country}/>
+                </>
+            )
+        })}
+        </>
+    );
 }
-
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/animal", {
-    method: "GET", 
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const animals = await res.json();
+    await prisma.$connect();
+    const animals = await prisma.animal.findMany();
 
-  return {
-    props: {
-      animals,
-    },
-  };
-}
+    
+    return {
+      props: {animals} // will be passed to the page component as props
+    }
+  }
+

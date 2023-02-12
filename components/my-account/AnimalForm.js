@@ -3,22 +3,21 @@ import styles from "./AnimalForm.module.css";
 import { useState } from "react";
 
 function AnimalForm() {
-  const [aname, setaname] = useState("lion");
-  const [aage, setaage] = useState(50);
-  const [acolor, setacolor] = useState("blue");
-  const [acountry, setacountry] = useState("india");
-  // const data = { aname, aage, acolor, acountry };
+  const [name, setname] = useState("lion");
+  const [desc, setdesc] = useState("lion is king");
+  const [color, setcolor] = useState("yellow");
+  const [age, setage] = useState(80);
+  const [country, setcountry] = useState("india");
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log(aage, acolor, acountry);
 
-    fetch("/api/animal", {
-      method: "POST", // or 'PUT'
+    fetch("/api/my-account/add-animal", {
+      method: "POST", 
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ aage, acolor, acountry, aname }),
+      body: JSON.stringify({ age, color, country, name,desc }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -31,41 +30,47 @@ function AnimalForm() {
 
   return (
     <>
-      <p>You are adding : 
-      {acolor} {aname} who is {aage} years old live in {acountry}
-      </p>
-      <h2>Add Animal</h2>
+      <h2> Animal addition Form</h2>
       <form className={styles.container} onSubmit={handleSubmit}>
         <label>name</label>
         <input
           type="text"
-          value={aname}
+          value={name}
           onChange={(e) => {
-            setaname(e.target.value);
+            setname(e.target.value);
           }}
         ></input>
         <label>Age</label>
         <input
           type="number"
-          value={aage}
+          value={age}
           onChange={(e) => {
-            setaage(e.target.value);
+            setage(e.target.value);
           }}
         ></input>
+        <label>Description</label>
+        <textarea
+          onChange={(e) => {
+            setdesc(e.target.value);
+          }}
+          value={desc}
+          rows="4"
+          cols="50"
+        ></textarea>
         <label>Color</label>
         <input
           type="text"
-          value={acolor}
+          value={color}
           onChange={(e) => {
-            setacolor(e.target.value);
+            setcolor(e.target.value);
           }}
         ></input>
         <label>Country</label>
         <input
           type="text"
-          value={acountry}
+          value={country}
           onChange={(e) => {
-            setacountry(e.target.value);
+            setcountry(e.target.value);
           }}
         ></input>
         <button> Add Animal</button>

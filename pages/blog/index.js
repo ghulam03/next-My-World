@@ -1,4 +1,4 @@
-import BlogCard from "../../components/blog/blog-card";
+import BlogCard from "../../components/blog/BlogCard";
 import prisma from "../../prisma/prisma";
 
 export default function Index(props) {
@@ -8,8 +8,7 @@ export default function Index(props) {
         {props.blogs.map((blog)=>{
             return (
                 <>
-                 <BlogCard/>
-                 <p>{blog.name}</p>
+                 <BlogCard title={blog.title} desc={blog.desc} author={blog.author}/>
                 </>
             )
         })}
@@ -18,7 +17,7 @@ export default function Index(props) {
 }
 export async function getStaticProps(context) {
     await prisma.$connect();
-    const blogs = await prisma.animal.findMany();
+    const blogs = await prisma.blog.findMany();
 
     
     return {
