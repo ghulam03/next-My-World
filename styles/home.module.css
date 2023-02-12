@@ -1,5 +1,13 @@
+.mcontainer{
+    background-color: rgb(206, 233, 233);
+}
 .container{
-    background-color: bisque;
+    /* background-color: rgb(213, 243, 243); */
     display: flex;
     justify-content: center;
+}
+.tcontain{
+    padding-left: 300px;
+    padding-right: 200px;
+    /* background-color: azure; */
 }

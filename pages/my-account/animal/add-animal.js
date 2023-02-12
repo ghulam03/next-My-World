@@ -1,7 +1,7 @@
-import BlogForm from "../../components/my-account/BlogForm";
+import AnimalForm from "../../../components/my-account/AnimalForm";
 import { getSession } from "next-auth/react";
 import { useState } from "react";
-export default function AddBlog() {
+export default function AddAnimal() {
   const [isAuth, setisAuth] = useState(false);
 
   async function isAuthHandle() {
@@ -16,8 +16,7 @@ export default function AddBlog() {
 
   return (
     <>
-      <p>add blog here</p>
-      <BlogForm />
+      <AnimalForm />
     </>
   );
 }

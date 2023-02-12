@@ -7,16 +7,17 @@ export default function Index() {
 
   return (
     <>
+    <div className={styles.mcontainer}>
+      
     <main  className={styles.container}>
       
       <h1>This is Home  page</h1>
-      <Link href="/blog">
-        <h1>Blog App</h1>
-      </Link>
       
       
     </main>
-    <h3>the content of counter app</h3>
+    <div className={styles.tcontain}>
+      
+    <h3 >the content of counter app,</h3>
       <h3> bear no is {bears}</h3>
       <p>
         Laboris consectetur proident et non reprehenderit cupidatat
@@ -29,6 +30,8 @@ export default function Index() {
         Elit consequat cupidatat do nostrud laboris magna eu dolor nostrud
         tempor.
       </p>
+    </div>
+    </div>
     </>
   );
 }
