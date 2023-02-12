@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 import styles from "./SignUp.module.css";
 
@@ -12,12 +12,12 @@ function SignUp() {
     e.preventDefault();
     // console.log(aage, acolor, acountry);
 
-    fetch("/api/auth", {
+    fetch("/api/users", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ age, email, country, name ,password}),
+      body: JSON.stringify({ age, email, country, name, password }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -28,26 +28,57 @@ function SignUp() {
       });
   }
 
-  
   return (
     <>
-      <h1>Sign Up</h1>
-      {name}is {age} years old.{email}{country}{password}
-      <form className={styles.container} onSubmit={handleSubmit}>
+          <p>this is my signup details</p>
+      <div className={styles.container}>
+        <div>
+          <p>
+            {name}is {age} years old.
+          </p>
+          <p>
+            he live in{country}.<p>.this is his password {password}</p>
+          </p>
+          <p>his/her email is {email}.</p>
+        </div>
+      <form className={styles.formcontainer} onSubmit={handleSubmit}>
         <label>name</label>
-        <input type="text" value={name} onChange={(e)=>setname(e.target.value)}></input>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setname(e.target.value)}
+          ></input>
         <label>Age</label>
-        <input type="number" value={age} onChange={(e)=>setage(e.target.value)}></input>
+        <input
+          type="number"
+          value={age}
+          onChange={(e) => setage(e.target.value)}
+          ></input>
         <label>Email</label>
-        <input type="text" value={email} onChange={(e)=>setemail(e.target.value)}></input>
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setemail(e.target.value)}
+          ></input>
         <label>Password</label>
-        <input type="password" value={password} onChange={(e)=>setpassword(e.target.value)}></input>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setpassword(e.target.value)}
+          ></input>
         <label>Country</label>
-        <input type="text" value={country} onChange={(e)=>setcountry(e.target.value)}></input>
+        <input
+          type="text"
+          value={country}
+          onChange={(e) => setcountry(e.target.value)}
+          ></input>
         <button> SignUp</button>
       </form>
+          </div>
     </>
   );
 }
 
 export default SignUp;
+
+

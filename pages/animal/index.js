@@ -29,7 +29,7 @@ export default function Animal(props) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3001/api/animal", {
+  const res = await fetch("http://localhost:3000/api/animal", {
     method: "GET", 
     headers: {
       "Content-Type": "application/json",

@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function AnimalCard() {
-  return (
-    <
-        
-    >AnimalCard</>
-  )
+  return <>AnimalCard</>;
 }
 
-export default AnimalCard
+export default AnimalCard;

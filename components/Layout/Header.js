@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "./Header.module.css";
 function Header() {
+  
   return (
     <>
     <Link href="/">
@@ -9,6 +10,9 @@ function Header() {
         </Link>
       <nav className={styles.header}>
       
+        <Link href="/blog">
+          <h2>Blog</h2>
+        </Link>
         <Link href="/animal">
           <h2>Animal</h2>
         </Link>
@@ -21,12 +25,7 @@ function Header() {
         <Link href="/counter-app">
           <h2>CounterApp</h2>
         </Link>
-        <Link href="/users">
-          <h2>User List</h2>
-        </Link>
-        <Link href="/api-check">
-          <h2>check your api here</h2>
-        </Link>
+        
 
       </nav>
     </>
