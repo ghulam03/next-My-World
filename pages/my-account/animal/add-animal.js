@@ -1,4 +1,4 @@
-import AnimalForm from "../../../components/my-account/AnimalForm";
+import AnimalForm from "../../../components/my-account/animal/AnimalForm";
 import { getSession } from "next-auth/react";
 import { useState } from "react";
 export default function AddAnimal() {

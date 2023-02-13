@@ -35,7 +35,11 @@ export default function Index() {
       <h2>Add Animal</h2>
         
     </Link>
+    <Link href="/my-account/animal/view-animal">
       <h2>View All Animal</h2>
+        
+    </Link>
+    
         </div>
       </div>
     </>
