@@ -1,19 +1,22 @@
 .auth {
   display: flex;
 }
-.auth > h3 {
-  margin: 5px 5px 5px 5px;
-}
-.logo{
-    color: rgb(231, 21, 39);
+.logo {
+  color: rgb(231, 21, 39);
 }
 .container {
   display: flex;
- background-color: var(--color-primary);
+  background-color: var(--color-primary);
   justify-content: space-between;
 }
 
-
+.signup {
+  width: 56px;
+  height: 79px;
+}
+/* .auth > h3 {
+  margin: 5px 5px 5px 5px;
+} */
 /* .logo > h3 {
   margin: 5px 5px 5px 5px;
 } */

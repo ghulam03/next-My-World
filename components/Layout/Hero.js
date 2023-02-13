@@ -28,7 +28,7 @@ function Hero() {
               <button onClick={() => signIn()}>Sign in</button>
     
               <Link href="/auth/signup">
-                <h3>Signup</h3>
+                <button className={styles.signup}> Signup</button>
               </Link>
               </div>
               </main>
