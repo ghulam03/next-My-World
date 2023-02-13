@@ -1,7 +1,7 @@
-import BlogForm from "../../../components/my-account/blog/BlogForm";
+import ProductForm from "../../../components/my-account/product/ProductForm";
 import { getSession } from "next-auth/react";
 import { useState } from "react";
-export default function AddBlog() {
+export default function AddProduct() {
   const [isAuth, setisAuth] = useState(false);
 
   async function isAuthHandle() {
@@ -16,7 +16,7 @@ export default function AddBlog() {
 
   return (
     <>
-      <BlogForm />
+      <ProductForm />
     </>
   );
 }

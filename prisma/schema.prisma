@@ -7,15 +7,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Animal {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  name    String @unique
-  color   String
-  desc String
-  age     Int
-  country String
-}
-
 model User {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   email    String @unique
@@ -25,9 +16,29 @@ model User {
   country  String
 }
 
-model Blog {
+model Product {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
-  author     String
-  title    String @unique
+  name     String
+  pcode    String @unique
   desc     String
+  rating   Int
+  category String
+}
+
+
+
+model Animal {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  name    String @unique
+  color   String
+  desc    String
+  age     Int
+  country String
+}
+
+model Blog {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  author String
+  title  String @unique
+  desc   String
 }

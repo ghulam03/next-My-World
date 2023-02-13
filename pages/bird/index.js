@@ -1,6 +1,6 @@
 export default function Bird() {
   return (
-    <><h1>bird</h1>
+    <><h1>About Bird</h1>
       <p>
         Sit pariatur aliquip nostrud aute do sunt. Commodo proident dolor fugiat
         officia occaecat fugiat. Adipisicing nulla aute irure aliqua commodo
@@ -9,7 +9,7 @@ export default function Bird() {
         exercitation eiusmod incididunt mollit aliquip consequat. Qui ea enim
         fugiat eu.
       </p>
-      <h2>next paragraph</h2>
+      <h2>Benefit of Birds</h2>
       <p>
         Cillum eiusmod excepteur exercitation irure in est consectetur velit
         commodo in et ad ullamco. Ipsum adipisicing eu et pariatur magna ex

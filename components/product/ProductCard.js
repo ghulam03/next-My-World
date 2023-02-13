@@ -1,18 +1,18 @@
 import Link from "next/link";
 import React from "react";
-import styles from "./AnimalCard.module.css"
+import styles from "./ProductCard.module.css"
 
-function AnimalCard(props) {
+function ProductCard(props) {
 
-    const path =`/animal/${props.name}`
+    const path =`/product/${props.pcode}`
     
   return <>
   {
     <div className={styles.container}>
     <h3>Name is:{props.name}</h3>
-    <h3>Description is :{props.desc}</h3>  <h3>Color is:{props.color}</h3>
-    <h3>age is: {props.age}</h3>
-    <h3>live in:{props.country}</h3>
+    <h3>Description is :{props.desc}</h3>  <h3>Rating is:{props.rating}</h3>
+    <h3>Category is: {props.category}</h3>
+    <h3>Model is:{props.pcode}</h3>
     <Link href={path}> 
     <button>
         View
@@ -27,4 +27,4 @@ function AnimalCard(props) {
   </>;
 }
 
-export default AnimalCard;
+export default ProductCard;

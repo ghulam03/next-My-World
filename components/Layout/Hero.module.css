@@ -9,7 +9,7 @@
 }
 .container {
   display: flex;
-  background-color: rgb(220, 220, 231);
+ background-color: var(--color-primary);
   justify-content: space-between;
 }
 

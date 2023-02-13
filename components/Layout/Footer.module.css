@@ -1,5 +1,5 @@
 .footer{
-    background-color: rgb(182, 186, 175);
+    background-color: var(--color-primary);
     width: auto;
     height: 200px;
 }

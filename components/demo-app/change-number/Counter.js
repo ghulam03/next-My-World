@@ -1,13 +1,11 @@
 import React from "react";
-import useStore from "../../utils/store";
+import useStore from "../../../utils/store2";
 
 function Counter() {
   const bears = useStore((state) => state.bears);
-  const increasePopulation = useStore((state) => state.increasePopulation)
-  const decreasePopulation = useStore((state) => state.decreasePopulation)
-  const removeAllBears=useStore((state) => state.removeAllBears)
-
-  
+  const increasePopulation = useStore((state) => state.increasePopulation);
+  const decreasePopulation = useStore((state) => state.decreasePopulation);
+  const removeAllBears = useStore((state) => state.removeAllBears);
 
   return (
     <>

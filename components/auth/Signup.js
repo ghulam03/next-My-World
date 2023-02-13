@@ -3,17 +3,16 @@ import React, { useState } from "react";
 import styles from "./SignUp.module.css";
 
 function SignUp() {
-  const [name, setname] = useState("");
-  const [email, setemail] = useState("");
+  const [name, setname] = useState("Abid");
+  const [email, setemail] = useState("test@test");
   const [age, setage] = useState(10);
-  const [country, setcountry] = useState("");
-  const [password, setpassword] = useState("");
+  const [country, setcountry] = useState("India");
+  const [password, setpassword] = useState("12345");
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log(aage, acolor, acountry);
 
     fetch("/api/users", {
-      method: "POST", // or 'PUT'
+      method: "POST", 
       headers: {
         "Content-Type": "application/json",
       },
@@ -30,55 +29,50 @@ function SignUp() {
 
   return (
     <>
-          <p>this is my signup details</p>
+    
+      <p>
+
+        My name is {name}.I am {age} years old.My  email is {email}. I live
+        in {country}.My password is {password}
+      </p>
+
       <div className={styles.container}>
-        <div>
-          <p>
-            {name}is {age} years old.
-          </p>
-          <p>
-            he live in{country}.<p>.this is his password {password}</p>
-          </p>
-          <p>his/her email is {email}.</p>
-        </div>
-      <form className={styles.formcontainer} onSubmit={handleSubmit}>
-        <label>name</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setname(e.target.value)}
+        <form className={styles.formcontainer} onSubmit={handleSubmit}>
+          <label>name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setname(e.target.value)}
           ></input>
-        <label>Age</label>
-        <input
-          type="number"
-          value={age}
-          onChange={(e) => setage(e.target.value)}
+          <label>Email</label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setemail(e.target.value)}
           ></input>
-        <label>Email</label>
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setemail(e.target.value)}
+          <label>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setpassword(e.target.value)}
           ></input>
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setpassword(e.target.value)}
+          <label>Age</label>
+          <input
+            type="number"
+            value={age}
+            onChange={(e) => setage(e.target.value)}
           ></input>
-        <label>Country</label>
-        <input
-          type="text"
-          value={country}
-          onChange={(e) => setcountry(e.target.value)}
+          <label>Country</label>
+          <input
+            type="text"
+            value={country}
+            onChange={(e) => setcountry(e.target.value)}
           ></input>
-        <button> SignUp</button>
-      </form>
-          </div>
+          <button> SignUp</button>
+        </form>
+      </div>
     </>
   );
 }
 
 export default SignUp;
-
-
