@@ -8,8 +8,8 @@ export default function Index() {
 
   async function isAuthHandle() {
     const session = await getSession();
-    console.log(session, "session");
-    console.log(session.user.email, "session");
+    // console.log(session, "session");
+    // console.log(session.user.email, "session");
     if (session) {
       setemail(session.user.email);
     }
@@ -18,7 +18,6 @@ export default function Index() {
   isAuthHandle();
   return (
     <>
-      <h3>Email ID: {email}</h3>
       <div className={styles.container}>
         <div>
           <h1>Product</h1>
@@ -45,6 +44,20 @@ export default function Index() {
           </Link>
           <h2>View Blogs</h2>
         </div>
+        <div>
+          <Link href="/my-account/view-profile">
+          <button>View Profile
+            
+          </button>
+          </Link>
+        </div>
+    <main>
+      
+      <h3>Email ID: {email}</h3>
+      <h3>User Name:</h3>
+      <h3>Age:</h3>
+      <h3>Country:</h3>
+    </main>
       </div>
     </>
   );

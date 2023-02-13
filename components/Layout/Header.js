@@ -38,8 +38,8 @@ function Header() {
   
   async function isAuthHandle() {
     const session = await getSession();
-    console.log(session,"session")
-    console.log(session.user.email,"session")
+    // console.log(session,"session")
+    // console.log(session.user.email,"session")
     if (session) {
       setisAuth(true);
     }
@@ -52,7 +52,7 @@ function Header() {
     <div className={styles.mcontainer}>
       
       <Link href="/">
-        <h2>Home</h2>
+        <h2 className={styles.home}>Home</h2>
       </Link>
       <nav className={styles.header}>
       <Link href="/product">

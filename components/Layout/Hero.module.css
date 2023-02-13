@@ -1,8 +1,10 @@
 .auth {
   display: flex;
+  margin-right: 100px;
 }
 .logo {
-  color: rgb(231, 21, 39);
+  color: rgba(170, 28, 64, 0.923);
+  margin-left: 600px;
 }
 .container {
   display: flex;

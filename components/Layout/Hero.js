@@ -11,13 +11,12 @@ function Hero() {
 
   async function handle(){
     
-    const session = await getSession()
+    const session = await getSession();
     if(session){
-        setisAuth(true)
+      setisAuth(true)
     }}
     
     handle();
-    console.log(isAuth)
       
     if(!isAuth){
       return (

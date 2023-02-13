@@ -10,3 +10,6 @@
 .mcontainer{
   background-color: var(--color-primary);
 }
+.home{
+  margin-left: 600px;
+}

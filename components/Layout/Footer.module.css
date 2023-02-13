@@ -1,5 +1,13 @@
 .footer{
     background-color: var(--color-primary);
     width: auto;
-    height: 200px;
+    height: 100vh;
+}
+.footer>h1{
+    margin-left: 600px;
+
+}
+.footer>p{
+    margin-left: 200px;
+    margin-right: 200px;
 }

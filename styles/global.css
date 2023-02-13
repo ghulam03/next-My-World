@@ -2,12 +2,18 @@
     box-sizing: border-box;
 }
 body{
-    --color-primary:rgba(204, 216, 225, 0.884);
-    --color-secondary:rgba(204, 216, 225, 0.256);
+    --color-primary:rgba(133, 182, 185, 0.703);
+    --color-primary-light:rgba(133, 182, 185, 0.188);
+    --color-secondary:rgba(157, 141, 141, 0.846);
+    --color-secondary-light:rgba(234, 214, 235, 0.46);
+    --card-dark:rgb(33, 235, 67);
+    --card-light:rgba(33, 235, 67, 0.114);
+    --card:rgba(33, 235, 67, 0.658);
+    )
     font-family: 'Roboto', sans-serif;
     color: #791010;
     margin: 0;
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary-light);
 
 }
 h1,

@@ -1,0 +1,13 @@
+.container{
+    width: 50vw;
+    height: 300px;
+    background-color: var(--card-light);
+    margin-left: 500px;
+    margin-right: 300px;
+
+} 
+.email{
+    margin-left: 500px;
+    margin-right: 300px;
+    background-color: var(--card);
+}
