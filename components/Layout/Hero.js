@@ -9,15 +9,23 @@ import { useState } from "react";
 function Hero() {
   const [isAuth, setisAuth] = useState(false)
 
-  async function handle(){
+  async function isAuthHandle(){
     
     const session = await getSession();
     if(session){
       setisAuth(true)
     }}
     
-    handle();
+    isAuthHandle();
       
+ function signOut() {
+  signOut()
+  window.location.replace("http://localhost:3000")
+  console.log("signO")
+  
+  
+}
+    
     if(!isAuth){
       return (
         <>
@@ -33,14 +41,20 @@ function Hero() {
               </main>
               </>
               )
-    }
-    if(isAuth){
-      return (
-        <>
+            }
+            if(isAuth){
+              return (
+                <>
           <main className={styles.container}>
             <h1 className={styles.logo}>LOGO</h1>
             <div className={styles.auth}>
-              <button onClick={() => signOut()}>Sign Out</button>
+              {/* <button onClick={() => signOut()}>Sign Out</button> */}
+              <button onClick={() => {
+                
+                signOut()
+                
+                }}>Sign Out</button>
+              // <button onClick={signOut}>Sign Out</button>
               </div></main></>)
     
     }

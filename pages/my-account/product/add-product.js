@@ -1,7 +1,10 @@
 import ProductForm from "../../../components/my-account/product/ProductForm";
 import { getSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
+
 export default function AddProduct() {
+    const router=useRouter()
   const [isAuth, setisAuth] = useState(false);
 
   async function isAuthHandle() {
@@ -12,7 +15,11 @@ export default function AddProduct() {
   }
 
   isAuthHandle();
-  if (!isAuth) return <p>Login first</p>
+  if (!isAuth) {
+    
+    router.push("http://localhost:3000")
+    //   return <p>Login first</p>
+  }
 
   return (
     <>

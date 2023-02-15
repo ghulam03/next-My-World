@@ -4,6 +4,8 @@ import styles from "../../styles/my-account.module.css";
 import { useState } from "react";
 
 export default function Index() {
+
+  
   const [email, setemail] = useState("test@test");
 
   async function isAuthHandle() {
