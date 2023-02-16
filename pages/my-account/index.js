@@ -40,11 +40,13 @@ export default function Index() {
           </Link>
         </div>
         <div>
-          <h1>Blog</h1>
-          <Link href="/my-account/blog/add-blog">
-            <button>Add Blog</button>
+          <h1>Post</h1>
+          <Link href="/my-account/post/add-post">
+            <button>Add Post</button>
           </Link>
-          <button>View Blogs</button>
+          <Link href="/my-account/post/view-post">
+            <button>View Post</button>
+          </Link>
         </div>
         <div>
           <h1>Profile</h1>

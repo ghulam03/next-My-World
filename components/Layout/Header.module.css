@@ -7,13 +7,20 @@
 .header  h2 {
     margin: 5px 5px 5px 5px;
 }
-.mcontainer{
+.cont{
   background-color: var(--color-primary);
 }
 .home{
   margin-left: 600px;
 }
-.mcontainer button{
+.cont button{
   width: 120px;
   height: 40px;
+}
+.user{
+  width:100px;
+
+  height: 50px;
+  background-color: var(--card);
+  margin-left: 700px;
 }

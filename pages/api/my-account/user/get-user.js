@@ -1,4 +1,4 @@
-import prisma from "../../../prisma/prisma";
+import prisma from "../../../../prisma/prisma";
 
 export default async function handle(req, res) {
    await prisma.$connect();
@@ -11,7 +11,7 @@ const rest= await prisma.user.findUnique({
       where:{
         email}
     })
-    
+    console.log(rest,"user found")
     res.json(rest);
   }
 }

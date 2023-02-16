@@ -1,16 +1,16 @@
+import { useDispatch, useSelector } from "react-redux";
+
 import Link from "next/link";
 import React from "react";
 import { getSession } from "next-auth/react";
 import isAuthHandle from "../../utils/isAuth";
 import styles from "./Header.module.css";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
-
-// const isAuth = isAuthHandle();
 
 function Header() {
   const [isAuth, setisAuth] = useState(false);
-  // const dispatch=useDispatch()
+  const name =useSelector((state)=>state.user.name)
+  
 // const [email, setemail] = useState("default")
 
   async function isAuthHandle() {
@@ -44,10 +44,11 @@ function Header() {
 
   return (
     <>
-      <div className={styles.mcontainer}>
+      <div className={styles.cont}>
         <Link href="/">
           <h2 className={styles.home}>Home</h2>
         </Link>
+        {isAuth &&(<h2 className={styles.user}>{name}</h2>)}
         <nav className={styles.header}>
           <Link href="/product">
             <h2>All Product</h2>
@@ -61,8 +62,8 @@ function Header() {
           <Link href="/bird">
             <h2>Bird</h2>
           </Link>
-          <Link href="/blog">
-            <h2>All Blog</h2>
+          <Link href="/post">
+            <h2>All Post</h2>
           </Link>
           <Link href="/demo-app">
             <h2>Demo App</h2>

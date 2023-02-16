@@ -1,53 +1,52 @@
-import React from "react";
-import styles from "./BlogForm.module.css";
-import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from "react";
 
-function BlogForm() {
-  const [title, settitle] = useState("default");
+import styles from "./PostForm.module.css";
+import { useSelector } from "react-redux";
+
+function PostForm() {
+  const [title, settitle] = useState("");
   const [category, setcategory] = useState("default");
   const [desc, setdesc] = useState("default");
-  const [id, setid] = useState(" defaut")
-  // const idd=uuidv4(); 
+  const [id, setid] = useState(" defaut");
+  const writer=useSelector((state)=>state.user.name)
+
+  // const idd=uuidv4();
   // console.log(id,"id")
   // setid(idd)
-  // const [authorId, setauthorId] = useState("default")
-  
   // import {  Prisma } from prisma/client'
   // const myRandomObjectID = Prisma.ObjectID().toString()
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("before api");
 
-    fetch("/api/my-account/add-blog", {
+    fetch("/api/my-account/add-post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, category, desc,id}),
+      body: JSON.stringify({ title, category, desc, id,writer}),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success blog:", data);
+        console.log("post data", data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-    console.log("after api");
   }
 
   return (
     <>
       <div className={styles.container}>
         <div>
-          <h2>Write Your Blog</h2>
+          <h2>Write Your post</h2>
         </div>
         <div className={styles.fcont}>
           <form onSubmit={handleSubmit}>
             <div>
               <label>Title</label>
               <input
+              placeholder="unique"
                 type="text"
                 value={title}
                 onChange={(e) => {
@@ -56,9 +55,10 @@ function BlogForm() {
               ></input>
             </div>
             <div>
-              <label>Blog ID</label>
+              <label>post ID</label>
               <input
                 type="text"
+                placeholder="unique"
                 value={id}
                 onChange={(e) => {
                   setid(e.target.value);
@@ -86,9 +86,9 @@ function BlogForm() {
                 }}
               ></input>
             </div>
-          <div>
-            <button> Add Blog</button>
-          </div>
+            <div>
+              <button> Add Post</button>
+            </div>
           </form>
         </div>
       </div>
@@ -96,4 +96,4 @@ function BlogForm() {
   );
 }
 
-export default BlogForm;
+export default PostForm;

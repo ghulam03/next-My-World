@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function ViewAnimal() {
+  
     const [animals, setanimal] = useState({})
       function handleClick() {
     

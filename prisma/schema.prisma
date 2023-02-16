@@ -16,14 +16,13 @@ generator client {
 //   country  String
 // }
 model User {
-  id       String @id  @map("_id") 
+  id       String @id @map("_id")
   email    String @unique
   name     String
   password String
   age      Int
   country  String
 }
-
 
 model Product {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
@@ -43,20 +42,21 @@ model Animal {
   country String
 }
 
-model Blog {
+model Post {
   id           String         @id @map("_id")
   category     String
-  title        String         
+  title        String         @unique
   desc         String
+  writer       String
   // author       User?          @relation(fields: [authorId], references: [id])
   // authorId     String         @db.ObjectId
-  BlogCategory BlogCategory[]
+  PostCategory PostCategory[]
 }
 
-model BlogCategory {
-  id        String @id @map("_id")
-  categoryy String
-  subCat    String
-  blogId    String
-  blog      Blog   @relation(fields: [blogId], references: [id])
+model PostCategory {
+  id       String @id @map("_id")
+  category String
+  subCat   String
+  postId   String
+  post     Post   @relation(fields: [postId], references: [id])
 }
