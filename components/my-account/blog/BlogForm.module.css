@@ -1,3 +1,13 @@
 .container{
-    background-color: rgb(188, 232, 232);
+    background-color: var(--card-light);
+    display: flex;
+    flex-direction: column;
+    width:500px ;
+    height: 500px;
+    margin-left: 300px;
+}
+.fcont div{
+    margin-left: 10px;
+    background-color:var(--card);
+
 }

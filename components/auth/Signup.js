@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./SignUp.module.css";
 
 function SignUp() {
+  const [id, setid] = useState("default")
   const [name, setname] = useState("Abid");
   const [email, setemail] = useState("test@test");
   const [age, setage] = useState(10);
@@ -11,16 +12,16 @@ function SignUp() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("/api/users", {
+    fetch("/api/auth/sign-up", {
       method: "POST", 
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ age, email, country, name, password }),
+      body: JSON.stringify({ age, email, country, name, password,id }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
+        console.log("user signup", data);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -33,12 +34,23 @@ function SignUp() {
       <p>
 
         My name is {name}.I am {age} years old.My  email is {email}. I live
-        in {country}.My password is {password}
+        in {country}.My password is {password}.My id is{id}
       </p>
 
       <div className={styles.container}>
         <form className={styles.formcontainer} onSubmit={handleSubmit}>
-          <label>name</label>
+        <input
+            type="text"
+            value={id}
+            onChange={(e) => setid(e.target.value)}
+          ></input>
+           <label>User ID</label>
+        <input
+            type="text"
+            value={name}
+            onChange={(e) => setname(e.target.value)}
+          ></input>
+          <label>Name</label>
           <input
             type="text"
             value={name}
@@ -52,7 +64,7 @@ function SignUp() {
           ></input>
           <label>Password</label>
           <input
-            type="password"
+            type="text"
             value={password}
             onChange={(e) => setpassword(e.target.value)}
           ></input>

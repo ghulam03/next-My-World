@@ -28,32 +28,24 @@ export default NextAuth({
         await prisma.$connect();
         const result = await prisma.user.findUnique({
           where: {
-            email: credentials.username,
-          },
-          select: {
-            password: true,
-            email: true,
-          },
+            email: credentials.username
+          }
+          // select: {
+          //   password: true,
+          //   email: true,
+          //   id:true,
+          //   name:true,
+          //   age:true,
+          // },
         });
+        console.log(result,"login")
         if (result.password===credentials.password) {
           return result;
         } else {
           return null;
         }
 
-        // const res = await fetch("/your/endpoint", {
-        //   method: "POST",
-        //   body: JSON.stringify(credentials),
-        //   headers: { "Content-Type": "application/json" },
-        // });
-        // const user = await res.json();
-
-        // // If no error and we have user data, return it
-        // if (res.ok && user) {
-        //   return user;
-        // }
-        // // Return null if user data could not be retrieved
-        // return null;
+       
       },
     }),
   ],

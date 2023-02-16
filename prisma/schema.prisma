@@ -7,14 +7,23 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// model User {
+//   id       String @id @default(auto()) @map("_id") @db.ObjectId
+//   email    String @unique
+//   name     String
+//   password String
+//   age      Int
+//   country  String
+// }
 model User {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id  @map("_id") 
   email    String @unique
   name     String
   password String
   age      Int
   country  String
 }
+
 
 model Product {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
@@ -24,8 +33,6 @@ model Product {
   rating   Int
   category String
 }
-
-
 
 model Animal {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
@@ -37,8 +44,19 @@ model Animal {
 }
 
 model Blog {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  author String
-  title  String @unique
-  desc   String
+  id           String         @id @map("_id")
+  category     String
+  title        String         
+  desc         String
+  // author       User?          @relation(fields: [authorId], references: [id])
+  // authorId     String         @db.ObjectId
+  BlogCategory BlogCategory[]
+}
+
+model BlogCategory {
+  id        String @id @map("_id")
+  categoryy String
+  subCat    String
+  blogId    String
+  blog      Blog   @relation(fields: [blogId], references: [id])
 }

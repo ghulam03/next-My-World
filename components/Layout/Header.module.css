@@ -13,3 +13,7 @@
 .home{
   margin-left: 600px;
 }
+.mcontainer button{
+  width: 120px;
+  height: 40px;
+}

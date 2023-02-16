@@ -19,7 +19,7 @@ export default function Title() {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log("title:", data);
+            console.log("single blog", data);
             setblog({...data})
         })
         .catch((error) => {

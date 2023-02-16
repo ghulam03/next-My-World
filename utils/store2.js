@@ -8,3 +8,7 @@ const useStoree = create((set) => ({
 }))
 
 export default useStoree;
+
+
+
+// const id=req.query.id

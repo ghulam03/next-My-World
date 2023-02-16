@@ -2,6 +2,8 @@ import Link from "next/link";
 import React from "react";
 import styles from "./BlogCard.module.css";
 function BlogCard(props) {
+  // console.log(props,"blog-card prop");
+  
   const path =`/blog/${props.title}`
 
 //  function handleClick(title){
@@ -9,7 +11,6 @@ function BlogCard(props) {
   
 //   }
   
-  console.log(props);
   return (
     <>
       <div className={styles.container}>
@@ -23,7 +24,7 @@ function BlogCard(props) {
         </Link>
 
           {/* <button onClick={()=>handleClick(props.title)}>View</button> */}
-        <button>Delete</button>
+        <button>Like</button>
       </div>
     </>
   );

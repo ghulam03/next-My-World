@@ -12,3 +12,7 @@
     height: 300px;
     background-color: var(--color-secondary-light);
 }
+.container button{
+    width: 120px;
+    height: 40px;
+}

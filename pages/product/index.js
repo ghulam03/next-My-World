@@ -8,7 +8,7 @@ export default function Index(props) {
         {props.products.map((p)=>{
             return (
                 <>
-                 <ProductCard name={p.name}  pcode={p.pcode} rating={p.rating} desc={p.desc} category={p.category}/>
+                 <ProductCard key ={p.pcode} name={p.name}  pcode={p.pcode} rating={p.rating} desc={p.desc} category={p.category}/>
                 </>
             )
         })}

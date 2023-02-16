@@ -24,35 +24,37 @@ export default function Index() {
         <div>
           <h1>Product</h1>
           <Link href="/my-account/product/add-product">
-            <h2>Add Product</h2>
+            <button>Add Product</button>
           </Link>
           <Link href="/my-account/product/view-product">
-            <h2>View Products</h2>
+            <button>View Products</button>
           </Link>
         </div>
         <div>
           <h1>Animal</h1>
           <Link href="/my-account/animal/add-animal">
-            <h2>Add Animal</h2>
+            <button>Add Animal</button>
           </Link>
           <Link href="/my-account/animal/view-animal">
-            <h2>View Animals</h2>
+            <button>View Animals</button>
           </Link>
         </div>
         <div>
           <h1>Blog</h1>
           <Link href="/my-account/blog/add-blog">
-            <h2>Add Blog</h2>
+            <button>Add Blog</button>
           </Link>
-          <h2>View Blogs</h2>
+          <button>View Blogs</button>
         </div>
         <div>
-          <Link href="/my-account/view-profile">
-          <button>View Profile
-            
-          </button>
+          <h1>Profile</h1>
+          <Link href="/my-account/profile/view-profile">
+            <button>View Profile</button>
           </Link>
+          <button disabled>Edit Profile</button>
         </div>
+        
+        
     <main>
       
       <h3>Email ID: {email}</h3>

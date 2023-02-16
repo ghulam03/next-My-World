@@ -1,0 +1,6 @@
+.cont{
+    background-color:var(--card-light);
+    width:400px;
+    height:200px;
+    margin-left: 200px;
+}
