@@ -2,13 +2,13 @@ import ProductCard from "../../components/product/ProductCard";
 import prisma from "../../prisma/prisma";
 
 export default function Index(props) {
-    console.log(props)
+    console.log("all product",props.products)
     return (
         <>
         {props.products.map((p)=>{
             return (
                 <>
-                 <ProductCard key ={p.pcode} name={p.name}  pcode={p.pcode} rating={p.rating} desc={p.desc} category={p.category}/>
+                 <ProductCard key ={p.id} pcode={p.pcode} userId={p.userId} title={p.title}  rating={p.rating} desc={p.desc} price={p.price}/>
                 </>
             )
         })}

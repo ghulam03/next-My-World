@@ -7,45 +7,44 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// model User {
-//   id       String @id @default(auto()) @map("_id") @db.ObjectId
-//   email    String @unique
-//   name     String
-//   password String
-//   age      Int
-//   country  String
-// }
 model User {
-  id       String @id @map("_id")
-  email    String @unique
+  id       String    @id @map("_id")
+  email    String    @unique
   name     String
   password String
   age      Int
   country  String
+  cart     Cart?
+  products Product[]
 }
 
 model Product {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  pcode    String @unique
-  desc     String
-  rating   Int
-  category String
+  id    String @id @map("_id")
+  pcode String @unique
+
+  title  String
+  desc   String
+  rating Int
+  price  Int
+  Cart   Cart?   @relation(fields: [cartId], references: [id])
+  cartId String?
+  User   User    @relation(fields: [userId], references: [email])
+  userId String  
 }
 
-model Animal {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  name    String @unique
-  color   String
-  desc    String
-  age     Int
-  country String
+model Cart {
+  id       String    @id  @map("_id") 
+  titem    Int
+  tprice   Int
+  uId      String    @unique
+  user     User      @relation(fields: [uId], references: [email])
+  products Product[]
 }
 
 model Post {
   id           String         @id @map("_id")
-  category     String
   title        String         @unique
+  category     String
   desc         String
   writer       String
   // author       User?          @relation(fields: [authorId], references: [id])
@@ -60,3 +59,21 @@ model PostCategory {
   postId   String
   post     Post   @relation(fields: [postId], references: [id])
 }
+
+model Animal {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  name    String @unique
+  color   String
+  desc    String
+  age     Int
+  country String
+}
+
+// model User {
+//   id       String @id @default(auto()) @map("_id") @db.ObjectId
+//   email    String @unique
+//   name     String
+//   password String
+//   age      Int
+//   country  String
+// }

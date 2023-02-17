@@ -18,11 +18,12 @@ function ProductCard(props) {
     <>
       {
         <div className={styles.container}>
-          <h3>Name is:{props.name}</h3>
+          <h3>Title is:{props.title}</h3>
+          <h3>Price is:{props.price}</h3>
           <h3>Description is :{props.desc}</h3>{" "}
           <h3>Rating is:{props.rating}</h3>
-          <h3>Category is: {props.category}</h3>
-          <h3>Model is:{props.pcode}</h3>
+          <h3>Posted By:{props.userId}</h3>
+          <h3>Product Code is:{props.pcode}</h3>
           <Link href={path}>
             <button>View</button>
           </Link>

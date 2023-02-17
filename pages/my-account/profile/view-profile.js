@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 
-import getEmailId from "../../../../utils/getEmId";
-import styles from "../../../../styles/viewProfile.module.css";
+import getEmailId from "../../../utils/getEmId";
+import styles from "../../../styles/viewProfile.module.css";
 import { useSelector } from "react-redux";
 
 export default function Index() {

@@ -1,27 +1,34 @@
 import React from "react";
 import styles from "./ProductForm.module.css";
+import { useSelector } from "react-redux";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function ProductForm() {
-  const [name, setname] = useState("cap");
+  const userId=useSelector((state)=>state.user.email)
+  const [title, settitle] = useState("cap");
+  const [price, setprice] = useState(10)
   const [pcode, setpcode] = useState("unique");
   const [desc, setdesc] = useState("cap is good");
   const [rating, setrating] = useState(5);
-  const [category, setcategory] = useState("clothes");
+  // const [category, setcategory] = useState("clothes");
+  
+  const id=uuidv4();
+  console.log("id ",id) // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("/api/my-account/add-product", {
+    fetch("/api/my-account/product/add-product", {
       method: "POST", 
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, pcode,desc,rating,category }),
+      body: JSON.stringify({ userId,title,price, pcode,desc,rating,id }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("prod", data);
+        console.log("prod added", data);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -32,12 +39,12 @@ function ProductForm() {
     <>
       <h2> Product Addition Form</h2>
       <form className={styles.container} onSubmit={handleSubmit}>
-        <label>name</label>
+        <label>Title</label>
         <input
           type="text"
-          value={name}
+          value={title}
           onChange={(e) => {
-            setname(e.target.value);
+            settitle(e.target.value);
           }}
         ></input>
         <label>Product Code</label>
@@ -57,12 +64,12 @@ function ProductForm() {
           rows="4"
           cols="50"
         ></textarea>
-        <label>Category</label>
+        <label>Price</label>
         <input
-          type="text"
-          value={category}
+          type="number"
+          value={price}
           onChange={(e) => {
-            setcategory(e.target.value);
+            setprice(e.target.value);
           }}
         ></input>
         <label>Rating</label>
