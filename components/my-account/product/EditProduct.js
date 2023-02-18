@@ -36,9 +36,11 @@ function EditProduct(props) {
   
 
   return (
-    <>
+    <><div className={styles.container} >
+        
+   
       <h2> Edit Product</h2>
-      <form className={styles.container} onSubmit={editHandel}>
+      <form onSubmit={editHandel}>
         <label>Title</label>
         <input
           type="text"
@@ -76,6 +78,7 @@ function EditProduct(props) {
         ></input>
         <button> Edit Product</button>
       </form>
+      </div>
     </>
   );
 }

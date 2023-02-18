@@ -60,6 +60,17 @@ function showEditForm(){
 
   return (
     <>
+          {isAuth &&
+            isSameUser &&
+            isEditFormV && (
+              <EditProduct
+                title={title}
+                price={price}
+                desc={desc}
+                rating={rating}
+                pcode={pcode}
+              />
+            )}
       {
         <div className={styles.container}>
           <h3>Title is:{props.title}</h3>
@@ -80,17 +91,6 @@ function showEditForm(){
           {isAuth && isSameUser && (
             <button onClick={deleteHandler}>Delete Product</button>
           )}
-          {isAuth &&
-            isSameUser &&
-            isEditFormV && (
-              <EditProduct
-                title={title}
-                price={price}
-                desc={desc}
-                rating={rating}
-                pcode={pcode}
-              />
-            )}
         </div>
       }
     </>
