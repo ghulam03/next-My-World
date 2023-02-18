@@ -3,6 +3,7 @@
   display: flex;
   flex-flow: row;
   justify-content: center;
+  
 }
 .header  h2 {
     margin: 5px 5px 5px 5px;
@@ -11,7 +12,8 @@
   background-color: var(--color-primary);
 }
 .home{
-  margin-left: 600px;
+  margin-left: 90px;
+  width: 50px;
 }
 .cont button{
   width: 120px;

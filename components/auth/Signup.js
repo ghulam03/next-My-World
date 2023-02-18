@@ -31,26 +31,22 @@ function SignUp() {
   return (
     <>
     
-      <p>
+      {/* <p>
 
         My name is {name}.I am {age} years old.My  email is {email}. I live
         in {country}.My password is {password}.My id is{id}
-      </p>
+      </p> */}
 
       <div className={styles.container}>
         <form className={styles.formcontainer} onSubmit={handleSubmit}>
+          <label>User ID</label>
         <input
             type="text"
             value={id}
             onChange={(e) => setid(e.target.value)}
           ></input>
-           <label>User ID</label>
-        <input
-            type="text"
-            value={name}
-            onChange={(e) => setname(e.target.value)}
-          ></input>
-          <label>Name</label>
+            <label>Name</label>
+       
           <input
             type="text"
             value={name}

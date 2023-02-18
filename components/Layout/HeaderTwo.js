@@ -11,8 +11,8 @@ function HeaderTwo() {
     <>
       <div className={styles.cont}>
         <h2>HeaderTwo</h2>
-        <h2>Value is:{val}</h2>
-        <h2>User is:{name}</h2>
+        <h3>Value is:{val}</h3>
+        <h3>User is:{name}</h3>
         {/* <h2>User is:{user?user:"default"}</h2> */}
       </div>
     </>

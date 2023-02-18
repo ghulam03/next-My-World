@@ -1,39 +1,88 @@
-import { useEffect, useState } from "react";
-
-import getEmailId from "../../../utils/getEmId";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 export default function ViewProduct() {
-
+//  const id=useSelector((state)=>state.user.id)
   const email=useSelector((state)=>state.user.email)
   console.log(email,"user-email in my-account view prod")
-  const [products, setproducts] = useState([])
+  // const [pproducts, setpproducts] = useState([])
+//stackoverflow
+// const url="api/my-account/product/get-product"
+// function fetchData(url
+//   ,email
+//   ) {
+//   return fetch(url
+//    , {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ 
+//         email,
+//       // id 
+//     }),}
+//     ).then(response => response.json());
+// }
+
+// Promise.all([
+//   fetchData("api/my-account/product/get-product"),
+//   fetchData("api/my-account/product/get-product")
+// ]).then(data => console.log(data),"prod view");
+
+
+
+  //
+// const data=
+//   fetch("/api/my-account/product/get-product", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ 
+//       email,
+//     // id 
+//   }),
+//   })
+//   const dataa=data[0].json()
+//   console.log(dataa,"view prod data")
+
+
   
-  useEffect(() => {
+  // .then((response)=> response.json())
+  // .then((products)=>{
+  //   // setpproducts(products)
+  //   console.log("myaccount view-product", products);
+  // })
+  // .catch((error)=>{
+  //   console.log("error my-act prod view",error )
+  // })
+  // //
+  // console.log(pproducts,"view-prod my-acccount")
+  // useEffect(() => {
     // const response = await 
-    fetch("/api/my-account/product/get-product", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    }).
+  //   fetch("/api/my-account/product/get-product", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email }),
+  //   }).
     // ;
-    then((response)=>{
-      response.json();
-    }).then((products)=>{
-      setproducts(products)
-      console.log("myaccount product data", products);
-    })
+  //   then((response)=>{
+  //     response.json();
+  //   }).then((products)=>{
+  //     setproducts(products)
+  //     console.log("myaccount product data", products);
+  //   })
     // const products = await response.json();
     // setproducts(products)
     // console.log("myaccount product data", products);
     
   
-    return () => {
-      console.log("ret ue for view-product my-account")
-    }
-  }, )
+  //   return () => {
+  //     console.log("ret ue for view-product my-account")
+  //   }
+  // }, )
   
   // const [email, setemail] = useState("no user");
   //   const [user, setuser] = useState({});
@@ -41,7 +90,7 @@ export default function ViewProduct() {
   //   const [isSVB, setisSVB] = useState(true)
   // async function random() {
   //   const emaill = await getEmailId();
-  //   // console.log(emaill);
+    // console.log(emaill);
   //   setemail(emaill);
   // }
   // random();

@@ -1,18 +1,23 @@
 import isAuthHandle from "../../utils/isAuth";
 import prisma from "../../prisma/prisma";
 import styles from "../../styles/productCode.module.css";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 
 export default function PCode(props) {
-  console.log(props, "props");
+  const isAuth=useSelector((state)=>state.auth.isAuth)
 
-  const [isAuth, setisAuth] = useState(false);
-  async function authCall() {
-    const isAuthh = await isAuthHandle();
-    setisAuth(isAuthh);
-  }
-  authCall();
-
+  
+  
+  console.log("propsfor pcode", props);
+//for isAuth
+//   const [isAuth, setisAuth] = useState(false);
+//   async function authCall() {
+//     const isAuthh = await isAuthHandle();
+//     setisAuth(isAuthh);
+//   }
+//   authCall();
+//
   return (
     <>
       <div className={styles.container}>

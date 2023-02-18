@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
+import { AiFillHome } from "react-icons/ai";
+import { IconContext } from "react-icons";
 import Link from "next/link";
 import React from "react";
 import { getSession } from "next-auth/react";
@@ -8,22 +10,24 @@ import styles from "./Header.module.css";
 import { useState } from "react";
 
 function Header() {
-  const [isAuth, setisAuth] = useState(false);
-  const name =useSelector((state)=>state.user.name)
+    
+  const isAuth =useSelector((state)=>state.auth.isAuth)
+  const name=useSelector((state)=>state.user.name)
   
-// const [email, setemail] = useState("default")
-
-  async function isAuthHandle() {
-    const session = await getSession();
-    console.log(session,"login-two")
-    if (session) {
-      setisAuth(true);
-      // setemail(session.user.email)
-    }
-  }
-
-  isAuthHandle();
-  
+  //for isAuth
+  // const [isAuth, setisAuth] = useState(false);
+  // async function isAuthHandle() {
+  //   const session = await getSession();
+  //   console.log(session,"login-two")
+  //   if (session) {
+  //     setisAuth(true);
+  //     // setemail(session.user.email)
+  //   }
+  // }
+  // isAuthHandle();
+  //
+  //userStateAdd
+  // const [email, setemail] = useState("default")
   // async function userStateAdd() {
   //   console.log("user info get")
   //     const data=await fetch("api/auth/get-user",{
@@ -36,17 +40,34 @@ function Header() {
   // const user=await data.json()
   // console.log(user,'st user')
   // dispatch({type:"addUser",payload:user})
-    
-    
-    
   // }
   // console.log(email)
+  //
+//for icon context
+//   color	undefined (inherit)	
+// size	1em	
+// className	undefined	
+// style	undefined	Can overwrite size and color
+// attr	undefined	Overwritten by other attributes
+// title
+//
 
   return (
     <>
       <div className={styles.cont}>
         <Link href="/">
-          <h2 className={styles.home}>Home</h2>
+          <div className={styles.home}>
+          <IconContext.Provider value={{ 
+            size:"50px",
+            color:"brown",
+            // style: { verticalAlign: 'left' }
+         }}>
+            
+          <AiFillHome/>
+          </IconContext.Provider>
+            {/* </AiFillHome> */}
+            {/* Home */}
+            </div>
         </Link>
         {isAuth &&(<h2 className={styles.user}>{name}</h2>)}
         <nav className={styles.header}>
