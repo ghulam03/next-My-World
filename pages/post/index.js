@@ -10,10 +10,9 @@ export default function Index(props) {
           <>
             <PostCard
               title={post.title}
+              userId={post.userId}
               desc={post.desc}
               category={post.category }
-              writer={post.writer}
-              id={post.id}
               
             />
           </>

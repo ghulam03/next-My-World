@@ -2,33 +2,34 @@ import React, { useState } from "react";
 
 import styles from "./PostForm.module.css";
 import { useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 
 function PostForm() {
-  const [title, settitle] = useState("");
-  const [category, setcategory] = useState("default");
-  const [desc, setdesc] = useState("default");
-  const [id, setid] = useState(" defaut");
-  const writer=useSelector((state)=>state.user.name)
+  const userId = useSelector((state) => state.user.email);
 
-  // const idd=uuidv4();
-  // console.log(id,"id")
-  // setid(idd)
+  const id = uuidv4();
+  console.log("id ", id);
+
+  const [title, settitle] = useState("new post");
+  const [category, setcategory] = useState("nature");
+  const [desc, setdesc] = useState("this is good post");
+
   // import {  Prisma } from prisma/client'
   // const myRandomObjectID = Prisma.ObjectID().toString()
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("/api/my-account/add-post", {
+    fetch("/api/my-account/post/add-post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, category, desc, id,writer}),
+      body: JSON.stringify({ title, category, userId, desc, id }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("post data", data);
+        console.log("post data added", data);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -39,14 +40,14 @@ function PostForm() {
     <>
       <div className={styles.container}>
         <div>
-          <h2>Write Your post</h2>
+          <h2>Write Your Post</h2>
         </div>
         <div className={styles.fcont}>
           <form onSubmit={handleSubmit}>
             <div>
               <label>Title</label>
               <input
-              placeholder="unique"
+                placeholder="unique"
                 type="text"
                 value={title}
                 onChange={(e) => {
@@ -54,8 +55,8 @@ function PostForm() {
                 }}
               ></input>
             </div>
-            <div>
-              <label>post ID</label>
+            {/* <div>
+              <label>Written By</label>
               <input
                 type="text"
                 placeholder="unique"
@@ -64,7 +65,7 @@ function PostForm() {
                   setid(e.target.value);
                 }}
               ></input>
-            </div>
+            </div> */}
             <div>
               <label>Description</label>
               <textarea

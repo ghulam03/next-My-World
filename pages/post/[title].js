@@ -1,17 +1,18 @@
-import isAuthHandle from "../../utils/isAuth";
 import prisma from "../../prisma/prisma";
 import styles from "../../styles/postTitle.module.css";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Title(props) {
-  console.log(props, "props");
+  
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  // console.log(props, "props for single post");
 
-  const [isAuth, setisAuth] = useState(false);
-  async function authCall() {
-    const isAuthh = await isAuthHandle();
-    setisAuth(isAuthh);
-  }
-  authCall();
+  // const [isAuth, setisAuth] = useState(false);
+  // async function authCall() {
+  //   const isAuthh = await isAuthHandle();
+  //   setisAuth(isAuthh);
+  // }
+  // authCall();
 
   return (
     <>
@@ -19,10 +20,11 @@ export default function Title(props) {
         <h3>Post Title is:{props.data.title}</h3>
         <h3>Description is:{props.data.desc} </h3>
         <h3>Category is:{props.data.category} </h3>
-        <h3>Written By:
-          {/* {props.data.writer} */}
-         </h3>
-        <h3>Id is:{props.data.id} </h3>
+        <h3>
+          Written By:
+          {props.data.userId}
+        </h3>
+        {/* <h3>Id is:{props.data.id} </h3> */}
         {isAuth && <button>Like</button>}
       </div>
     </>
@@ -35,7 +37,7 @@ export async function getStaticProps(context) {
   const title = params.title;
   await prisma.$connect();
   const data = await prisma.post.findUnique({ where: { title } });
-console.log('single post',data)
+  console.log("single post", data);
   return {
     props: { data },
   };

@@ -9,6 +9,10 @@ body{
     --card-dark:rgb(33, 235, 67);
     --card-light:rgba(33, 235, 67, 0.114);
     --card:rgba(33, 235, 67, 0.658);
+    --card-two:rgba(64, 89, 68, 0.291);
+    --card-two-light:rgba(64, 89, 68, 0.033);
+    --card-two-dark:rgba(54, 74, 57, 0.661);
+
     --tertiary-color:rgba(222, 235, 33, 0.176);
     
     font-family: 'Roboto', sans-serif;

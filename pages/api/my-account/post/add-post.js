@@ -3,18 +3,17 @@ import prisma from "../../../../prisma/prisma";
 export default async function handle(req, res) {
   await prisma.$connect();
   if (req.method === "POST") {
-    const { title, desc, category, id,writer } = req.body;
+    const { userId,title, desc, category, id } = req.body;
     console.log(desc, id, "post addition");
 
-    const rest = await prisma.post.create({
-      data: {
+    const data = await prisma.post.create({
+      data: {userId,
         title,
         category,
         desc,
-        id,
-        writer
+        id
       },
     });
-    res.json(rest);
+    res.json(data);
   }
 }

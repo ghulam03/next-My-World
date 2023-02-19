@@ -74,21 +74,21 @@ export default function Index() {
             </Link>
           </div>
           <div>
-            <h1>Animal</h1>
-            <Link href="/my-account/animal/add-animal">
-              <button>Add Animal</button>
-            </Link>
-            <Link href="/my-account/animal/view-animal">
-              <button>View Animals</button>
-            </Link>
-          </div>
-          <div>
             <h1>Post</h1>
             <Link href="/my-account/post/add-post">
               <button>Add Post</button>
             </Link>
             <Link href="/my-account/post/view-post">
               <button>View Post</button>
+            </Link>
+          </div>
+          <div>
+            <h1>Animal</h1>
+            <Link href="/my-account/animal/add-animal">
+              <button>Add Animal</button>
+            </Link>
+            <Link href="/my-account/animal/view-animal">
+              <button>View Animals</button>
             </Link>
           </div>
         </div>
