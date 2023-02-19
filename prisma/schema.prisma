@@ -16,49 +16,72 @@ model User {
   country  String
   cart     Cart?
   products Product[]
+  cloth    Cloth[]
 }
 
 model Product {
-  id    String @id @map("_id")
-  pcode String @unique
+  id     String @id @map("_id")
+  pcode  String @unique
+  userId String
+  User   User   @relation(fields: [userId], references: [email])
 
   title  String
   desc   String
   rating Int
   price  Int
-  Cart   Cart?   @relation(fields: [cartId], references: [id])
-  cartId String?
-  User   User    @relation(fields: [userId], references: [email])
-  userId String  
+  // Cart   Cart?   @relation(fields: [cartId], references: [id])
+  // cartId String?
 }
 
+//todo  sooner cart features to be added
 model Cart {
-  id       String    @id  @map("_id") 
-  titem    Int
-  tprice   Int
-  uId      String    @unique
-  user     User      @relation(fields: [uId], references: [email])
-  products Product[]
+  id       String      @id @map("_id")
+  uId      String      @unique
+  user     User        @relation(fields: [uId], references: [email])
+  products CartProduct
+  // titem    Int
+  // tprice   Int
+  // products Product[]
+  // Product  Product[]
+}
+
+type CartProduct {
+  pcode    String
+  quantity Int
+}
+
+//todo
+model Cloth {
+  id     String @id @map("_id")
+  ccode  String @unique
+  userId String
+  User   User   @relation(fields: [userId], references: [email])
+
+  title  String
+  desc   String
+  price  Int
+  rating Int
+  // Cart   Cart?   @relation(fields: [cartId], references: [id])
+  // cartId String?
 }
 
 model Post {
-  id           String         @id @map("_id")
-  title        String         @unique
-  category     String
-  desc         String
-  writer       String
+  id       String @id @map("_id")
+  title    String @unique
+  category String
+  desc     String
+  writer   String
   // author       User?          @relation(fields: [authorId], references: [id])
   // authorId     String         @db.ObjectId
-  PostCategory PostCategory[]
 }
 
-model PostCategory {
-  id       String @id @map("_id")
-  category String
-  subCat   String
-  postId   String
-  post     Post   @relation(fields: [postId], references: [id])
-}
+// model PostCategory {
+//   id       String @id @map("_id")
+//   category String
+//   subCat   String
+//   postId   String
+//   post     Post   @relation(fields: [postId], references: [id])
+// }
 
 model Animal {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
@@ -68,12 +91,3 @@ model Animal {
   age     Int
   country String
 }
-
-// model User {
-//   id       String @id @default(auto()) @map("_id") @db.ObjectId
-//   email    String @unique
-//   name     String
-//   password String
-//   age      Int
-//   country  String
-// }

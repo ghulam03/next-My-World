@@ -41,7 +41,7 @@ export default function Index() {
           <h2>Age :{age}</h2>
           <h2>Country : {country}</h2>
           <br></br>
-          <br/>
+          <br />
           <br></br>
           <Link href="/my-account/profile/edit-profile">
             <button>
@@ -62,6 +62,15 @@ export default function Index() {
             </Link>
             <Link href="/my-account/product/view-product">
               <button>View Products</button>
+            </Link>
+          </div>
+          <div>
+            <h1>Cloth</h1>
+            <Link href="/my-account/cloth/add-cloth">
+              <button>Add Cloth</button>
+            </Link>
+            <Link href="/my-account/cloth/view-product">
+              <button>View Cloth</button>
             </Link>
           </div>
           <div>

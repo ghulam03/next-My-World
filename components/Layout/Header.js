@@ -74,6 +74,9 @@ function Header() {
           <Link href="/product">
             <h2>All Product</h2>
           </Link>
+          <Link href="/cloth">
+            <h2>All Cloth</h2>
+          </Link>
           <Link href="/animal">
             <h2>All Animal</h2>
           </Link>
