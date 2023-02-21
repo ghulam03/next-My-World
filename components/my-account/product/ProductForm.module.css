@@ -1,6 +1,40 @@
-.container{
-    background-color: rgb(214, 191, 235);
-    width: 50%;
 
+.formcontainer{
+    background-color:
+    /* rgb(210, 184, 184); */
+     var(--card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:40%;
     height: 500px;
+    margin-left: 400px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+.formcontainer input{
+    width:80%;
+    height:70px
+}
+.formcontainer label{
+    padding-left: 200px;
+    align-items: center;
+    height: 70px;
+    width:80%;
+    background-color: 
+    var(--card);
+    /* rgba(181, 191, 146, 0.602); */
+}
+.formcontainer textarea{
+    width:80%;
+    height:300px
+
+}
+.formcontainer button{
+    width: 80%;
+    height: 80px;
+}
+.title{
+    margin-left: 600px;
 }

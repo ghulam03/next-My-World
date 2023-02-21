@@ -1,24 +1,40 @@
-.container {
-  background-color: rgb(214, 191, 235);
-  width: 100%;
-  /* height: 100%; */
-  /* margin-left: 300px; */
-  /* margin-right: 300px; */
-  height: 500px;
-  z-index: 100;
+
+.formcontainer{
+  background-color:
+  /* rgb(210, 184, 184); */
+   var(--card);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width:40%;
+  height: 500px;
+  margin-left: 400px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
 }
+.formcontainer input{
+  width:80%;
+  height:70px
+}
+.formcontainer label{
+  padding-left: 200px;
+  align-items: center;
+  height: 70px;
+  width:80%;
+  background-color: 
+  var(--card);
+  /* rgba(181, 191, 146, 0.602); */
+}
+.formcontainer textarea{
+  width:80%;
+  height:300px
 
-.container>form{
-    background-color: rgb(214, 191, 235);
-    display: flex;
-    flex-direction:column;
-    height: 500px;
-    width: 100%;
-margin-left: 100px;
-margin-right: 200px;
-  /* padding-left: 200px; */
-  /* padding-right: 200px; */
+}
+.formcontainer button{
+  width: 80%;
+  height: 80px;
+}
+.title{
+  margin-left: 600px;
 }

@@ -6,21 +6,6 @@ import { useState } from "react";
 
 export default function AddProduct() {
   
-    const router=useRouter()
-  const [isAuth, setisAuth] = useState(false);
-
-  // async function isAuthHandle() {
-  //   const session = await getSession();
-  //   if (session) {
-  //     setisAuth(true);
-  //   }
-  // }
-
-  // isAuthHandle();
-  // if (!isAuth) {
-    
-  //   router.push("http://localhost:3000")
-  // }
 
   return (
     <>

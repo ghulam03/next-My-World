@@ -34,9 +34,9 @@ function EditPost(props) {
 
   return (
     <>
-      <div className={styles.container}>
-        <h2> Edit Post</h2>
-        <form onSubmit={editHandel}>
+      {/* <div className={styles.container}> */}
+        <h2 className={styles.title}> Edit Post</h2>
+        <form className={styles.formcontainer} onSubmit={editHandel}>
           <label>Title</label>
           <input type="text" value={title} disabled></input>
          
@@ -61,7 +61,7 @@ function EditPost(props) {
           <input type="text" value={userId} disabled></input>
           <button> Edit Post</button>
         </form>
-      </div>
+      {/* </div> */}
     </>
   );
 }

@@ -30,7 +30,7 @@ export default function EditProfile() {
       .then((response) => response.json())
       .then((data) => {
         console.log("user edited profile data", data);
-        router.push(''/my-account)
+        router.push('/my-account')
         
       })
       .catch((error) => {

@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./ClothForm.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 function ClothForm() {
+  const router=useRouter()
   const userId=useSelector((state)=>state.user.email)
   const [title, settitle] = useState("shirt");
   const [price, setprice] = useState(100)
@@ -29,6 +31,7 @@ function ClothForm() {
       .then((response) => response.json())
       .then((data) => {
         console.log("prod added", data);
+        router.push('/cloth')
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -37,8 +40,8 @@ function ClothForm() {
 
   return (
     <>
-      <h2> Cloth Addition Form</h2>
-      <form className={styles.container} onSubmit={handleSubmit}>
+      <h2 className={styles.title}>Add Cloth!</h2>
+      <form className={styles.formcontainer} onSubmit={handleSubmit}>
         <label>Title</label>
         <input
           type="text"

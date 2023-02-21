@@ -1,17 +1,18 @@
 import React from "react";
 import styles from "./ProductForm.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 function ProductForm() {
+  const router=useRouter()
   const userId=useSelector((state)=>state.user.email)
   const [title, settitle] = useState("cap");
   const [price, setprice] = useState(10)
   const [pcode, setpcode] = useState("unique");
   const [desc, setdesc] = useState("cap is good");
   const [rating, setrating] = useState(5);
-  // const [category, setcategory] = useState("clothes");
   
   const id=uuidv4();
   console.log("id ",id) // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
@@ -29,6 +30,7 @@ function ProductForm() {
       .then((response) => response.json())
       .then((data) => {
         console.log("prod added", data);
+        router.push('/my-account')
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -37,8 +39,8 @@ function ProductForm() {
 
   return (
     <>
-      <h2> Product Addition Form</h2>
-      <form className={styles.container} onSubmit={handleSubmit}>
+      <h2 className={styles.title}> Add Product!</h2>
+      <form className={styles.formcontainer} onSubmit={handleSubmit}>
         <label>Title</label>
         <input
           type="text"

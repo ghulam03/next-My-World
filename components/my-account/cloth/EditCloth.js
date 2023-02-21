@@ -14,8 +14,8 @@ function EditCloth(props) {
   
   const [title, settitle] = useState(titlee);
   const [price, setprice] = useState(pricee);
-  const [desc, setdesc] = useState("edit-cap is good");
-  const [rating, setrating] = useState(5);
+  const [desc, setdesc] = useState(descc);
+  const [rating, setrating] = useState(ratingg);
 
   
   const editHandel = async (e) => {
@@ -36,11 +36,13 @@ function EditCloth(props) {
   
 
   return (
-    <><div className={styles.container} >
+    <>
+    {/* <div className={styles.container} > */}
         
    
-      <h2> Edit Cloth</h2>
-      <form onSubmit={editHandel}>
+      <h2 className={styles.title}> Edit Cloth!</h2>
+      <form className={styles.formcontainer}
+      onSubmit={editHandel}>
         <label>Title</label>
         <input
           type="text"
@@ -78,7 +80,7 @@ function EditCloth(props) {
         ></input>
         <button> Edit Cloth</button>
       </form>
-      </div>
+      {/* </div> */}
     </>
   );
 }

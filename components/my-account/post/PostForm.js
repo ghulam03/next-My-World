@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
 import styles from "./PostForm.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
 function PostForm() {
+  const router=useRouter()
   const userId = useSelector((state) => state.user.email);
 
   const id = uuidv4();
@@ -14,8 +16,6 @@ function PostForm() {
   const [category, setcategory] = useState("nature");
   const [desc, setdesc] = useState("this is good post");
 
-  // import {  Prisma } from prisma/client'
-  // const myRandomObjectID = Prisma.ObjectID().toString()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -30,6 +30,7 @@ function PostForm() {
       .then((response) => response.json())
       .then((data) => {
         console.log("post data added", data);
+        router.push('/post')
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -38,13 +39,11 @@ function PostForm() {
 
   return (
     <>
-      <div className={styles.container}>
-        <div>
-          <h2>Write Your Post</h2>
-        </div>
-        <div className={styles.fcont}>
-          <form onSubmit={handleSubmit}>
-            <div>
+      {/* <div className={styles.container}> */}
+          <h2 className={styles.title}>Write Your Post</h2>
+        {/* <div className={styles.fcont}> */}
+          <form className={styles.formcontainer} onSubmit={handleSubmit}>
+            {/* <div> */}
               <label>Title</label>
               <input
                 placeholder="unique"
@@ -54,19 +53,9 @@ function PostForm() {
                   settitle(e.target.value);
                 }}
               ></input>
-            </div>
-            {/* <div>
-              <label>Written By</label>
-              <input
-                type="text"
-                placeholder="unique"
-                value={id}
-                onChange={(e) => {
-                  setid(e.target.value);
-                }}
-              ></input>
-            </div> */}
-            <div>
+            {/* </div> */}
+            
+            {/* <div> */}
               <label>Description</label>
               <textarea
                 onChange={(e) => {
@@ -76,8 +65,8 @@ function PostForm() {
                 rows="4"
                 cols="50"
               ></textarea>
-            </div>
-            <div>
+            {/* </div> */}
+            {/* <div> */}
               <label>Category</label>
               <input
                 type="text"
@@ -86,13 +75,13 @@ function PostForm() {
                   setcategory(e.target.value);
                 }}
               ></input>
-            </div>
-            <div>
+            {/* </div> */}
+            {/* <div> */}
               <button> Add Post</button>
-            </div>
+            {/* </div> */}
           </form>
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </>
   );
 }
