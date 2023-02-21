@@ -1,6 +1,13 @@
+
 .cont{
-    width: 500px;
+    background-color:
+    /* var(--tertiary-color-); */
+    rgba(158, 183, 210, 0.261);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:40%;
     height: 500px;
-    background-color: var(--card-light);
-    margin-left: 250px;
-}
+    margin-left: 400px;
+    padding-top: 40px;
+    padding-bottom: 40px;}

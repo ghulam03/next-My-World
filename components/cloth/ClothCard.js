@@ -3,10 +3,12 @@ import Link from "next/link";
 import React from "react";
 import isAuthHandle from "../../utils/isAuth";
 import styles from "./ClothCard.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function ClothCard(props) {
+  const router=useRouter()
 
   const title = props.title;
   const price = props.price;
@@ -40,6 +42,7 @@ function showEditForm(){
       .then((response) => response.json())
       .then((data) => {
         console.log("cloth deleted", data);
+        router.push('/post')
       })
       .catch((error) => {
         console.error("Error:", error);

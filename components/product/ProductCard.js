@@ -1,14 +1,28 @@
+import React, { useEffect } from "react";
+
 import EditProduct from "../my-account/product/EditProduct";
 import Link from "next/link";
-import React from "react";
 import isAuthHandle from "../../utils/isAuth";
 import styles from "./ProductCard.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function ProductCard(props) {
   // const [isSameUser, setisSameUser] = useState(false)
   // setisSameUser(true)
+
+//   useEffect(()=>{
+// if(isEditFormV){
+//   setisEditFormV(false)
+// }
+  
+//   return ()=>{
+//     console.log("ret ue for edit form ")
+//   }}
+//   ,[isEditFormV])
+
+  const router=useRouter()
 
   const title = props.title;
   const price = props.price;
@@ -42,6 +56,7 @@ function showEditForm(){
       .then((response) => response.json())
       .then((data) => {
         console.log("product deleted", data);
+        router.push('/product')
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -56,6 +71,7 @@ function showEditForm(){
             isSameUser &&
             isEditFormV && (
               <EditProduct
+              
                 title={title}
                 price={price}
                 desc={desc}

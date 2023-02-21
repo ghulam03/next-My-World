@@ -12,7 +12,7 @@ function PostForm() {
   const id = uuidv4();
   console.log("id ", id);
 
-  const [title, settitle] = useState("new post");
+  const [title, settitle] = useState("unique");
   const [category, setcategory] = useState("nature");
   const [desc, setdesc] = useState("this is good post");
 
