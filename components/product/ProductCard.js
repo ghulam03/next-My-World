@@ -46,15 +46,7 @@ function showEditForm(){
       .catch((error) => {
         console.error("Error:", error);
       });
-  }
-  //for isAuth
-  // const [isAuth, setisAuth] = useState(false);
-  // async function authCall() {
-  //   const isAuthh = await isAuthHandle();
-  //   setisAuth(isAuthh);
-  // }
-  // authCall();
-  //
+    }
 
   const path = `/product/${props.pcode}`;
 

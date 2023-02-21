@@ -1,7 +1,7 @@
 .footer{
     background-color: var(--color-primary);
     width: auto;
-    height: 100vh;
+    height: 300px;
 }
 .footer>h1{
     margin-left: 600px;

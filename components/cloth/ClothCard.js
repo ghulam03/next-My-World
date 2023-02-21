@@ -7,8 +7,6 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function ClothCard(props) {
-  // const [isSameUser, setisSameUser] = useState(false)
-  // setisSameUser(true)
 
   const title = props.title;
   const price = props.price;
@@ -47,14 +45,7 @@ function showEditForm(){
         console.error("Error:", error);
       });
   }
-  //for isAuth
-  // const [isAuth, setisAuth] = useState(false);
-  // async function authCall() {
-  //   const isAuthh = await isAuthHandle();
-  //   setisAuth(isAuthh);
-  // }
-  // authCall();
-  //
+  
 
   const path = `/cloth/${props.ccode}`;
 

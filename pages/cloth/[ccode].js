@@ -1,23 +1,18 @@
 import isAuthHandle from "../../utils/isAuth";
 import prisma from "../../prisma/prisma";
-import styles from "../../styles/productCode.module.css";
+import styles from "../../styles/clothCode.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
 export default function CCode(props) {
   const isAuth=useSelector((state)=>state.auth.isAuth)
+  const router=useRouter()
 
   
   
   console.log("propsfor ccode", props);
-//for isAuth
-//   const [isAuth, setisAuth] = useState(false);
-//   async function authCall() {
-//     const isAuthh = await isAuthHandle();
-//     setisAuth(isAuthh);
-//   }
-//   authCall();
-//
+
   return (
     <>
       <div className={styles.container}>
@@ -29,6 +24,9 @@ export default function CCode(props) {
         <h3>Posted By:{props.data.userId} </h3>
         {isAuth && <button>Add To Cart</button>}
       </div>
+      <button className={styles.button} onClick=
+      {()=>router.push("/cloth")} >Back</button>
+      
     </>
   );
 }

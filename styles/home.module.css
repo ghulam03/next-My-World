@@ -1,11 +1,99 @@
-.mcontainer{
-    /* background-color: rgb(206, 233, 233); */
-}
 .container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
-.tcontain{
-    padding-left: 300px;
-    padding-right: 200px;
+
+.home{
+    margin-left: 600px;
+   
+}
+.rowOne{
+    display: flex;
+    flex-direction: row;
+    margin-left: 400px;
+    justify-content:flex-start;
+    width:100%;
+    height: 220px;
+
+}
+.rowOne div{
+    align-items: center;
+    width:200px;
+    height: 200px;
+    background-color: azure;
+    border-color: var(--color-primary);
+    border-width: 10px;
+    border-style: solid;
+    padding-left: 20px;
+    
+
+}
+.rowOne>div>h3{
+    padding-left: 25px;
+    padding-top: 60px;
+} 
+.rowOne div:hover{
+    background-color: rgba(43, 226, 220, 0.06);
+    cursor: pointer;
+}
+
+
+.rowTwo{
+    display: flex;
+    flex-direction: row;
+    margin-left: 400px;
+    justify-content:flex-start;
+    width:100%;
+    height: 220px;
+
+}
+.rowTwo div{
+    align-items: center;
+    width:200px;
+    height: 200px;
+    background-color: azure;
+    border-color: var(--color-primary);
+    border-width: 10px;
+    border-style: solid;
+    padding-left: 20px;
+    
+
+}
+.rowTwo>div>h3{
+    padding-left: 25px;
+    padding-top: 60px;
+} 
+.rowTwo div:hover{
+    background-color: rgba(43, 226, 220, 0.06);
+    cursor: pointer;
+}
+
+.rowThree{
+    display: flex;
+    flex-direction: row;
+    margin-left: 400px;
+    justify-content:flex-start;
+    width:100%;
+    height: 220px;
+
+}
+.rowThree div{
+    align-items: center;
+    width:200px;
+    height: 200px;
+    background-color: azure;
+    border-color: var(--color-primary);
+    border-width: 10px;
+    border-style: solid;
+    padding-left: 20px;
+    
+
+}
+.rowThree>div>h3{
+    padding-left: 25px;
+    padding-top: 60px;
+} 
+.rowThree div:hover{
+    background-color: rgba(43, 226, 220, 0.06);
+    cursor: pointer;
 }

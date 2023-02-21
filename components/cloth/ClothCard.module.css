@@ -1,5 +1,5 @@
 .container{
-    background-color: rgba(83, 21, 99, 0.588);
+    background-color:var(--card-two) ;
     width:40%;
     height:300px;
     margin-left: 400px;

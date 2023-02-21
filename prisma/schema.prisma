@@ -74,7 +74,6 @@ model Post {
   desc     String
   category String
 
-  // authorId     String         @db.ObjectId
 }
 
 // model PostCategory {
@@ -85,11 +84,3 @@ model Post {
 //   post     Post   @relation(fields: [postId], references: [id])
 // }
 
-model Animal {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  name    String @unique
-  color   String
-  desc    String
-  age     Int
-  country String
-}

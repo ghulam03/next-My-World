@@ -1,18 +1,13 @@
 import prisma from "../../prisma/prisma";
 import styles from "../../styles/postTitle.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 export default function Title(props) {
+  const router=useRouter()
   
   const isAuth = useSelector((state) => state.auth.isAuth);
   // console.log(props, "props for single post");
-
-  // const [isAuth, setisAuth] = useState(false);
-  // async function authCall() {
-  //   const isAuthh = await isAuthHandle();
-  //   setisAuth(isAuthh);
-  // }
-  // authCall();
 
   return (
     <>
@@ -27,6 +22,8 @@ export default function Title(props) {
         {/* <h3>Id is:{props.data.id} </h3> */}
         {isAuth && <button>Like</button>}
       </div>
+      <button className={styles.button} onClick=
+      {()=>router.push("/post")} >Back</button>
     </>
   );
 }

@@ -11,18 +11,6 @@ const initialState = {
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  // {user:{
-
-  //     id: 0,
-  //     name: "adil",
-  //     email:"default@default",
-  //     password:"def",
-  //     age:10,
-  //     country:"india"
-  //   }
-
-  // }
-
   reducers: {
     addUser: (state, action) => {
       state.id=action.payload.id,

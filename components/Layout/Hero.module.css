@@ -1,24 +1,27 @@
-.auth {
-  display: flex;
-  margin-right: 100px;
-}
-.logo {
-  color: rgba(170, 28, 64, 0.923);
-  margin-left: 80px;
-}
 .container {
   display: flex;
   background-color: var(--color-primary);
   justify-content: space-between;
 }
-
-.signup {
-  width: 56px;
-  height: 79px;
+.auth {
+  display: flex;
+  margin-right: 150px;
+  padding-top: 60px;
 }
-/* .auth > h3 {
-  margin: 5px 5px 5px 5px;
-} */
-/* .logo > h3 {
-  margin: 5px 5px 5px 5px;
-} */
+.auth button{
+
+  width: 130px;
+  height: 60px;
+  background-color: var(--button-color)
+
+}
+.auth button:hover{
+  background-color:var(--button-hover-color)
+
+}
+
+.logo {
+  color: rgba(170, 28, 64, 0.923);
+  margin-left: 50px;
+  padding-top: 20px;
+}

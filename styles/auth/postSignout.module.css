@@ -1,0 +1,14 @@
+.container{
+    margin-left: 320px;
+   
+}
+.container button{
+
+    width: 130px;
+    height: 60px;
+    background-color: var(--button-color)
+}
+.container button:hover{
+    background-color:var(--button-hover-color)
+  
+  }

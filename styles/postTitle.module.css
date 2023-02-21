@@ -1,6 +1,11 @@
 .container{
-    background-color: rgb(181, 163, 198);
-    width: 400px;
-    height: 400px;
+    background-color: var(--card-three);
+    width: 40%;
+    height: 300px;
     margin-left: 400px;
+}
+.button{
+    margin-left: 400px;
+    width: 70px;
+    height: 40px;
 }

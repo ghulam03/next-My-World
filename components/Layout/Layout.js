@@ -63,13 +63,11 @@ function Layout(props) {
 
   return (
     <>
-      {/* <AuthContext.Provider value={usero}> */}
       <Hero />
-      <Header />
       <HeaderTwo />
+      <Header />
       <main>{props.children}</main>
       <Footer />
-      {/* </AuthContext.Provider> */}
     </>
   );
 }

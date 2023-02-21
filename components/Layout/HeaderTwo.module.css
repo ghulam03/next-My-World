@@ -1,8 +1,18 @@
 .cont{
-    height: 200px;
+    height: 80px;
     background-color:var(--color-primary) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     
 }
-.cont>h2{
-    margin-left: 300px;
+ .cont>h1{
+    margin-left: 600px;
+}
+.user{
+    /* padding-right: 160px; */
+    margin-right: 150px;
+
+    
+
 }

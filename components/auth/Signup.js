@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 import styles from "./SignUp.module.css";
+import { useRouter } from "next/router";
 
 function SignUp() {
-  const [id, setid] = useState("default")
+  const router=useRouter()
+  
+  const [id, setid] = useState("unique")
   const [name, setname] = useState("Abid");
-  const [email, setemail] = useState("test@test");
+  const [email, setemail] = useState("unique@unique");
   const [age, setage] = useState(10);
   const [country, setcountry] = useState("India");
   const [password, setpassword] = useState("12345");
@@ -21,7 +24,8 @@ function SignUp() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("user signup", data);
+        console.log("user signup", data)
+        router.push("/auth/post-signup");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -30,14 +34,8 @@ function SignUp() {
 
   return (
     <>
-    
-      {/* <p>
-
-        My name is {name}.I am {age} years old.My  email is {email}. I live
-        in {country}.My password is {password}.My id is{id}
-      </p> */}
-
-      <div className={styles.container}>
+        <h2 className={styles.title}>SignUp Here!</h2>
+      {/* <div className={styles.container}> */}
         <form className={styles.formcontainer} onSubmit={handleSubmit}>
           <label>User ID</label>
         <input
@@ -76,9 +74,9 @@ function SignUp() {
             value={country}
             onChange={(e) => setcountry(e.target.value)}
           ></input>
-          <button> SignUp</button>
+          <button>SignUp</button>
         </form>
-      </div>
+      {/* </div> */}
     </>
   );
 }
