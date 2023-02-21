@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import EditPost from "../my-account/post/EditPost";
 import Link from "next/link";
 import styles from "./PostCard.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 function PostCard(props) {
+const router=  useRouter()
   // console.log(props,"post-card prop");
   const path = `/post/${props.title}`;
   
@@ -36,6 +38,7 @@ function deleteHandler() {
     .then((response) => response.json())
     .then((data) => {
       console.log("post deleted", data);
+      router.push('/post')
     })
     .catch((error) => {
       console.error("Error:", error);
