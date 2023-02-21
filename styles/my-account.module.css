@@ -1,26 +1,29 @@
 .container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:flex-start;
+    margin-left: 320px;
+    width: 100%;
+    height: 500px
+    
+    ;
 }
 
 .profile{
     background-color: var(--tertiary-color);
-    width:300px;
-    height: 700px;
+    width:30%;
     padding-left: 50px;
 
 }
 .center{
-    display: flex;
-    flex-direction: row;
+    background-color:var(--card-three);
+    width: 30%;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: flex-start; */
     
 }
-/* .container>div{
-    padding: 50px;
-    width: 300px;
-    height: 300px;
-*/
+
 .container button{
     width: 120px;
     height: 40px;

@@ -40,8 +40,7 @@ export default function Index() {
           <h2>Password : {password}</h2>
           <h2>Age :{age}</h2>
           <h2>Country : {country}</h2>
-          <br></br>
-          <br />
+          {/* <br></br> */}
           <br></br>
           <Link href="/my-account/profile/edit-profile">
             <button>
@@ -60,46 +59,25 @@ export default function Index() {
             <Link href="/my-account/product/add-product">
               <button>Add Product</button>
             </Link>
-            <Link href="/my-account/product/view-product">
-              <button>View Products</button>
-            </Link>
+           
           </div>
           <div>
             <h1>Cloth</h1>
             <Link href="/my-account/cloth/add-cloth">
               <button>Add Cloth</button>
             </Link>
-            <Link href="/my-account/cloth/view-product">
-              <button>View Cloth</button>
-            </Link>
+            
           </div>
           <div>
             <h1>Post</h1>
             <Link href="/my-account/post/add-post">
               <button>Add Post</button>
             </Link>
-            <Link href="/my-account/post/view-post">
-              <button>View Post</button>
-            </Link>
+          
           </div>
-          <div>
-            <h1>Animal</h1>
-            <Link href="/my-account/animal/add-animal">
-              <button>Add Animal</button>
-            </Link>
-            <Link href="/my-account/animal/view-animal">
-              <button>View Animals</button>
-            </Link>
-          </div>
+         
         </div>
 
-        {/* <main>
-      
-      <h3>Email ID: {emaill}</h3>
-      <h3>User Name:</h3>
-      <h3>Age:</h3>
-      <h3>Country:</h3>
-    </main> */}
       </div>
     </>
   );
