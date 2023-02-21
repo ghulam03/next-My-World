@@ -1,8 +1,11 @@
 import styles from "../../../styles/my-account/profile/editProfile.module.css";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
 export default function EditProfile() {
+
+  const router=useRouter()
   const id = useSelector((state) => state.user.id);
   const sname = useSelector((state) => state.user.name);
   const email = useSelector((state) => state.user.email);
@@ -27,6 +30,8 @@ export default function EditProfile() {
       .then((response) => response.json())
       .then((data) => {
         console.log("user edited profile data", data);
+        router.push(''/my-account)
+        
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -35,7 +40,7 @@ export default function EditProfile() {
 
   return (
     <>
-      <div className={styles.container}>
+      {/* <div className={styles.container}> */}
         <form className={styles.formcontainer} onSubmit={handleEdit}>
           <label>User ID</label>
           <input type="text" disabled value={id}></input>
@@ -73,7 +78,7 @@ export default function EditProfile() {
           ></input>
           <button> Edit</button>
         </form>
-      </div>
+      {/* </div> */}
     </>
   );
 }
