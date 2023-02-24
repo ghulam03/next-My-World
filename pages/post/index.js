@@ -26,6 +26,8 @@ export async function getStaticProps(context) {
   const posts = await prisma.post.findMany();
 
   return {
-    props: { posts }, // will be passed to the page component as props
+    props: { posts },
+    revalidate: 10,
+    // will be passed to the page component as props
   };
 }

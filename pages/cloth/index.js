@@ -21,7 +21,8 @@ export async function getStaticProps() {
 
     
     return {
-      props: {cloths} 
+      props: {cloths} ,
+      revalidate: 10,
     }
   }
 
