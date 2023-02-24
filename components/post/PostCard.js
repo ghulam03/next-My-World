@@ -69,6 +69,7 @@ function deleteHandler() {
         <Link href={path}>
           <button>View</button>
         </Link>
+        {isAuth && <button>Like</button>}
         {isAuth && isSameUser && !isEditFormV && (
             <button  onClick={showEditForm}>
               Edit Product
@@ -79,7 +80,6 @@ function deleteHandler() {
           )}
 
         {/* <button onClick={()=>handleClick(props.title)}>View</button> */}
-        {isAuth && <button>Like</button>}
       </div>
     </>
   );
