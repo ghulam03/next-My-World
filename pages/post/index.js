@@ -2,7 +2,7 @@ import PostCard from "../../components/post/PostCard";
 import prisma from "../../prisma/prisma";
 
 export default function Index(props) {
-  console.log(props);
+  console.log("all post",props.posts);
   return (
     <>
       {props.posts.map((post) => {
@@ -21,10 +21,10 @@ export default function Index(props) {
     </>
   );
 }
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   await prisma.$connect();
   const posts = await prisma.post.findMany();
-
+console.log("all posts", posts)
   return {
     props: { posts },
     revalidate: 10,

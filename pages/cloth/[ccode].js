@@ -1,9 +1,7 @@
-import isAuthHandle from "../../utils/isAuth";
 import prisma from "../../prisma/prisma";
 import styles from "../../styles/clothCode.module.css";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 
 export default function CCode(props) {
   const isAuth=useSelector((state)=>state.auth.isAuth)
@@ -11,7 +9,7 @@ export default function CCode(props) {
 
   
   
-  console.log("propsfor ccode", props);
+  console.log("single cloth", props.data);
 
   return (
     <>
@@ -33,12 +31,12 @@ export default function CCode(props) {
 
 export async function getStaticProps(context) {
   const params = context.params;
-  console.log("slug is",params);
   const ccode = params.ccode;
+  // console.log("slug is",params);
   // console.log(pcode);
   await prisma.$connect();
   const data = await prisma.cloth.findUnique({ where: { ccode } });
-
+console.log("single cloth",data)
   return {
     props: { data },
   };
@@ -51,7 +49,7 @@ export async function getStaticPaths() {
   const paths = data.map((d) => ({
     params: { ccode: d.ccode },
   }));
-  console.log(paths);
+  console.log("all paths", paths);
 
   return {
     paths,

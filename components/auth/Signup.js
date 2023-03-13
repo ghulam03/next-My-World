@@ -24,7 +24,7 @@ function SignUp() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("user signup", data)
+        console.log("user signup details", data)
         router.push("/auth/post-signup");
       })
       .catch((error) => {

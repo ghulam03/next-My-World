@@ -4,7 +4,7 @@ export default async function handle(req, res) {
   await prisma.$connect();
   if (req.method === "POST") {
     const { userId,title, desc, category, id } = req.body;
-    console.log(desc, id, "post addition");
+    // console.log(desc, id, "post addition");
 
     const data = await prisma.post.create({
       data: {userId,
@@ -14,6 +14,7 @@ export default async function handle(req, res) {
         id
       },
     });
+    console.log("new post added",data)
     res.json(data);
   }
 }

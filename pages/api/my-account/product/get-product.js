@@ -12,7 +12,7 @@ export default async function handle(req, res) {
       },
     });
     res.json(prods);
-    console.log(prods,"my-account product view")
+    // console.log(prods,"my-account product view")
   // }
   // catch(error){
   //   console.log(error,"error y ")

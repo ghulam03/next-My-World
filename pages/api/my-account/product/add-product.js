@@ -10,7 +10,7 @@ const rest= await prisma.product.create({
       data:{
         id,pcode,userId,title,price,desc,rating}
     })
-    // console.log(rest)
+    console.log("new product added",rest)
     res.json(rest);
   }
 }

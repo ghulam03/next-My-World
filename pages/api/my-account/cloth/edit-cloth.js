@@ -14,7 +14,7 @@ export default async function handle(req, res) {
         rating,
       },
     });
-    console.log(result, "edited cloth");
+    console.log("edited cloth",result );
     res.json(result);
   }
 }

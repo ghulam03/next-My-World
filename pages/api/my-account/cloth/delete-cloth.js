@@ -10,7 +10,7 @@ export default async function handle(req, res) {
         where: { ccode}
       })
       
-          console.log("product  deleted",prod)
+          console.log("cloth  deleted",prod)
           res.json(prod);
         }
     }

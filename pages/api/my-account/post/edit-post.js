@@ -12,7 +12,7 @@ export default async function handle(req, res) {
         desc,
       },
     });
-    console.log(result, "edited post");
+    console.log("edited post",result) 
     res.json(result);
   }
 }

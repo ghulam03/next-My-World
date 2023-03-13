@@ -10,7 +10,7 @@ function PostForm() {
   const userId = useSelector((state) => state.user.email);
 
   const id = uuidv4();
-  console.log("id ", id);
+  // console.log("id ", id);
 
   const [title, settitle] = useState("unique");
   const [category, setcategory] = useState("nature");
@@ -29,7 +29,7 @@ function PostForm() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("post data added", data);
+        console.log("post added details", data);
         router.push('/post')
       })
       .catch((error) => {

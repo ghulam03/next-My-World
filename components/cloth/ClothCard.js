@@ -26,7 +26,7 @@ function ClothCard(props) {
   if (props.userId === email) {
     isSameUser = true;
   }
-  console.log(isSameUser);
+  // console.log(isSameUser);
  
 function showEditForm(){
   setisEditFormV(true)

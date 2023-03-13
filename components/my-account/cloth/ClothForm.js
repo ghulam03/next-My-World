@@ -16,7 +16,7 @@ function ClothForm() {
   // const [category, setcategory] = useState("clothes");
   
   const id=uuidv4();
-  console.log("id ",id) // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+  // console.log("id ",id) // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -30,7 +30,7 @@ function ClothForm() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("prod added", data);
+        console.log("cloth added", data);
         router.push('/cloth')
       })
       .catch((error) => {

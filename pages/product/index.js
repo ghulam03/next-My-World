@@ -19,7 +19,7 @@ export async function getStaticProps() {
     await prisma.$connect();
     const products = await prisma.product.findMany();
 
-    
+    console.log("all products",products)
     return {
       props: {products} ,
       revalidate: 10,

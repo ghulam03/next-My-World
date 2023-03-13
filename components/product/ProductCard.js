@@ -40,7 +40,7 @@ function ProductCard(props) {
   if (props.userId === email) {
     isSameUser = true;
   }
-  console.log(isSameUser);
+  // console.log(isSameUser);
  
 function showEditForm(){
   setisEditFormV(true)
@@ -55,7 +55,7 @@ function showEditForm(){
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("product deleted", data);
+        console.log("product deleted details", data);
         router.push('/product')
       })
       .catch((error) => {

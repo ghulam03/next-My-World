@@ -11,7 +11,7 @@ const rest= await prisma.user.findUnique({
       where:{
         email}
     })
-    console.log(rest,"user found")
+    // console.log(rest,"user found")
     res.json(rest);
   }
 }

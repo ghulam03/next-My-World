@@ -7,7 +7,7 @@ export default function Title(props) {
   const router=useRouter()
   
   const isAuth = useSelector((state) => state.auth.isAuth);
-  // console.log(props, "props for single post");
+  console.log( " single post", props.data);
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function Title(props) {
 
 export async function getStaticProps(context) {
   const params = context.params;
-  console.log(params);
+  // console.log(params);
   const title = params.title;
   await prisma.$connect();
   const data = await prisma.post.findUnique({ where: { title } });
@@ -42,11 +42,10 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   await prisma.$connect();
   const data = await prisma.post.findMany();
-  console.log(data, "single post");
   const paths = data.map((d) => ({
     params: { title: d.title },
   }));
-  console.log(paths);
+  console.log("all path ",paths);
 
   return {
     paths,

@@ -15,7 +15,7 @@ export default async function handle(req, res) {
         country: country
       },
     });
-
+console.log("user signup",result)
     // res.status(200).json({ aname, aage });
     res.json(result);
   }

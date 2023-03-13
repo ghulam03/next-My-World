@@ -10,7 +10,7 @@ export default async function handle(req, res) {
         where: { title}
       })
       
-          console.log("product  deleted",post)
+          console.log("post deleted",post)
           res.json(post);
         }
     }

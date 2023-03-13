@@ -10,7 +10,7 @@ const rest= await prisma.cloth.create({
       data:{
         id,ccode,userId,title,price,desc,rating}
     })
-    // console.log(rest)
+    console.log("new cloth data",rest)
     res.json(rest);
   }
 }

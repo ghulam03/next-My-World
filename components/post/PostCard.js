@@ -21,7 +21,7 @@ const router=  useRouter()
   if (props.userId === email) {
     isSameUser = true;
   }
-  console.log(isSameUser);
+  // console.log(isSameUser);
  
 function showEditForm(){
   setisEditFormV(true)
@@ -37,7 +37,7 @@ function deleteHandler() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("post deleted", data);
+      console.log("post deleted details", data);
       router.push('/post')
     })
     .catch((error) => {

@@ -14,6 +14,7 @@ export default async function handle(req, res) {
         country,
       },
     });
+    console.log("edited user details", result);
 
     res.json(result);
   }
